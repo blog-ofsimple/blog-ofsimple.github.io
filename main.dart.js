@@ -100477,7 +100477,7 @@ Jr(a,b,c,d,e,f){return this.aoo(a,b,c,d,e,f)},
 aoo(a,b,c,d,e,f){var s=0,r=A.S(t.H),q,p=this,o,n,m,l
 var $async$Jr=A.T(function(g,h){if(g===1)return A.P(h,r)
 while(true)switch(s){case 0:l=B.an.ba(a.a.a)
-if(a.a.a.length===0){d.$1("\uac12\uc774 \uc5c6\ub2e4")
+if(a.a.a.length===0){d.$1("Text is required")
 s=1
 break}if(c.c){if(f===""){d.$1("Key is required")
 s=1
