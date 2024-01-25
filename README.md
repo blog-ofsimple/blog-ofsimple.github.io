@@ -1,1 +1,0 @@
-# blog-ofsimple.github.io

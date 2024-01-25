@@ -1,146 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-  <title>Toy Of Simple</title>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
 
-  <style lang="css">* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 
-  html, body {
-    background: #343A4F;
-    height: 100%;
-    font-size: 14px;  // Defalut Size
-    font-family: Roboto, sans-serif;
-    color: #3a975f;
-  }
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
 
-  textarea {
-    resize: none;
-  }
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
 
-  textarea.form-control:focus,
-  input[type="text"]:focus,
-  input[type="password"]:focus,
-  input[type="datetime"]:focus,
-  input[type="datetime-local"]:focus,
-  input[type="date"]:focus,
-  input[type="month"]:focus,
-  input[type="time"]:focus,
-  input[type="week"]:focus,
-  input[type="number"]:focus,
-  input[type="email"]:focus,
-  input[type="url"]:focus,
-  input[type="search"]:focus,
-  input[type="tel"]:focus,
-  input[type="color"]:focus,
-  .uneditable-input:focus {
-    /*border-color: rgba(255, 128, 0, 0.8);*/
-    /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 191, 0, 0.6);*/
-    outline: 0 none;
-  }
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="toy_ofsimple_all_web">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
 
-  /* */
-  .container {
-    width: 100%;
-    margin: 0 auto;
-  }
+  <title>playground.ofsiemple.com</title>
+  <link rel="manifest" href="manifest.json">
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .icon-div {
-    width: 150px; /* calc(100% / 5); */
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-  .icon-box {
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-
-  .icon-box img {
-    width: 100%;
-  }
-
-  .icon-box p {
-    margin-top: 10px;
-  }
-
-  .title-div {
-    padding-top: 10px;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 700;
-    color: white;
-    font-family: Roboto, sans-serif;
-
-  }
-
-  .icon-text {
-    text-align: center;
-    font-family: Roboto, sans-serif;
-    color: white;
-  }
-
-  </style>
-<!--  <link href="/assets/css/chunk-515f98b2.0d1785ed.css" rel="prefetch">-->
-<!--  <link href="/assets/js/chunk-515f98b2.262fd3f5.js" rel="prefetch">-->
-<!--  <link href="/assets/css/app.3195c19d.css" rel="preload" as="style">-->
-<!--  <link href="/assets/js/app.dd9664b7.js" rel="preload" as="script">-->
-<!--  <link href="/assets/js/chunk-vendors.e3bf0661.js" rel="preload" as="script">-->
-<!--  <link href="/assets/css/app.3195c19d.css" rel="stylesheet">-->
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "2595346662";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
 </head>
 <body>
-<noscript><strong>We're sorry but blog-ofsimple.github.com doesn't work properly without JavaScript enabled. Please
-  enable it to continue.</strong></noscript>
-<div id="app"></div>
-<!--<script src="/assets/js/chunk-vendors.e3bf0661.js"></script>-->
-<!--<script src="/assets/js/app.dd9664b7.js"></script>-->
-<div class="title-div">Toy Of Simple</div>
-
-
-<div class="container">
-  <div class="row">
-    <div class="icon-div">
-      <div class="icon-box">
-        <img src="https://via.placeholder.com/200" alt="아이콘">
-        <p class="icon-text">QR GENERATOR</p>
-      </div>
-    </div>
-    <div class="icon-div">
-      <div class="icon-box">
-        <img src="https://via.placeholder.com/200" alt="아이콘">
-        <p class="icon-text">MEMORIZATION</p>
-      </div>
-    </div>
-    <div class="icon-div">
-      <div class="icon-box">
-        <img src="https://via.placeholder.com/200" alt="아이콘">
-        <p class="icon-text">OpenCV</p>
-      </div>
-    </div>
-    <div class="icon-div">
-      <div class="icon-box">
-        <img src="https://via.placeholder.com/200" alt="아이콘">
-        <p class="icon-text">OpenCV</p>
-      </div>
-    </div>
-  </div>
-</div>
-
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
