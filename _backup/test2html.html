@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page22222</title>
+</head>
+<body>
+    <h1>Test Page2</h1>
+    <script>
+        // WebView에서 호출할 함수 정의
+        function app_to_web(message) {
+            alert("Message from app:", message);
+            
+            // WebView에서 Objective-C에 메시지 전달
+            window.webkit.messageHandlers.app_to_web.postMessage(message);
+        }
+        
+        // 페이지 로드 완료 시 app_to_web 함수 호출
+        window.onload = function() {
+            app_to_web("Hello from web!");
+        };
+    </script>
+</body>
+</html>

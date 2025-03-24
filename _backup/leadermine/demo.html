@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>API 호출 테스트</title>
+</head>
+<body>
+    <button id="queryButton">API TEST</button>
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('queryButton').addEventListener('click', function() {
+            fetch('http://localhost:40122/lm/demo/sign/up', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({memberId: 'test', memberName:"홍길동이다", password:'12345a7@'})
+            })
+            .then(response => response.json())
+            .then(data => {
+                // document.getElementById('response').innerHTML = data.message;
+
+                if (data.code != '0000') {
+
+                 document.getElementById('response').innerHTML = data.message;
+                }
+            })
+            .catch((error) => {
+                alert('ddd')
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
