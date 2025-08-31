@@ -2,12 +2,12 @@
 <html><head>
     <meta charset="utf-8" />
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=/index.html" />
+    <meta http-equiv="refresh" content="0; url=/" />
     <script>
         (function () {
             var l = window.location;
-            var target = l.pathname + l.search + l.hash;
-            var url = "/index.html?redirect=" + encodeURIComponent(target.replace(/^\/+/, "/"));
+            var target = (l.pathname + l.search + l.hash).replace(/^\/+/, "/");
+            var url = "/?redirect=" + encodeURIComponent(target);
             l.replace(url);
         })();
     </script>
