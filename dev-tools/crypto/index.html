@@ -4,10 +4,10 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Crypto — 해시/암·복호화 유틸리티</title>
-  <meta name="description" content="브라우저에서 동작하는 해시/암·복호화 유틸. 키/벡터/인코딩 옵션과 보안 주의사항."/>
-  <link rel="canonical" href="https://ofsimple.com"/>
+  <meta name="description" content="SHA-256 해시, AES 암·복호화를 로컬에서 테스트."/>
+  <link rel="canonical" href="https://ofsimple.com/dev-tools/crypto/"/>
   <meta property="og:title" content="Crypto — 해시/암·복호화 유틸리티"/>
-  <meta property="og:description" content="브라우저에서 동작하는 해시/암·복호화 유틸. 키/벡터/인코딩 옵션과 보안 주의사항."/>
+  <meta property="og:description" content="SHA-256 해시, AES 암·복호화를 로컬에서 테스트."/>
   <meta name="robots" content="index,follow"/>
   <style>
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.75;color:#0f172a;padding:28px;max-width:960px;margin:0 auto}
@@ -21,13 +21,11 @@
 <body>
   
   <h1>Crypto 가이드</h1>
-  <p>SHA-256 등 해시, 대칭키 암·복호화를 로컬에서 수행합니다. 키/IV 관리와 인코딩 옵션, 실제 사용 시 유의점을 안내합니다.</p>
+  <p>WebCrypto API 기반 로컬 처리.</p>
   
-        <h2>주의사항</h2>
         <ul>
-          <li>키/IV는 외부 노출 금지</li>
-          <li>WebCrypto API 사용</li>
-          <li>민감 데이터는 가급적 로컬에서만</li>
+          <li>키/IV 외부 노출 금지</li>
+          <li>입출력 인코딩 선택</li>
         </ul>
       
   <hr/>
