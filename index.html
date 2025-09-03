@@ -148,24 +148,43 @@
          *  AD
          * ============================*/
         /* 기본: PC 광고만 보이게 */
-        .ad-pc { display: block; }
-        .ad-mo { display: none; }
-        .ad-footer {
+        /* 하단 고정 배너 바 */
+        .ad-footer{
             position: fixed;
             left: 0;
-            bottom: var(--footer-h);  /* footer 높이만큼 위 */
+            bottom: var(--footer-h);            /* footer 바로 위 */
             width: 100%;
-            display: flex;
-            justify-content: center;
-            background: var(--bg);   /* 배경색 지정해주면 깔끔 */
-            z-index: 999;            /* footer보다 뒤로 안 가게 */
+            z-index: 999;
+            background: var(--bg);
             line-height: 0;
-            padding: 4px 0;
+            padding: 6px 0;
+
+            /* 가운데 정렬 핵심 */
+            text-align: center;
         }
+
+        /* ins 자체를 가운데로 */
+        .ad-footer .adsbygoogle{
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        /* 기기 분기 (기본: PC 노출) */
+        .ad-pc{ display:block; }
+        .ad-mo{ display:none; }
+
         /* 900px 이하 → 모바일 광고 보이게 */
-        @media (max-width: 900px) {
-            .ad-pc { display: none; }
-            .ad-mo { display: block; }
+        @media (max-width: 900px){
+            .ad-pc{ display:none; }
+            .ad-mo{ display:block; }
+        }
+
+        /* iOS 세이프에어리어(노치) 대응 – 선택사항 */
+        @supports (padding: max(0px)){
+            .ad-footer{
+                padding-left:  max(6px, env(safe-area-inset-left));
+                padding-right: max(6px, env(safe-area-inset-right));
+            }
         }
 
         /* ============================
