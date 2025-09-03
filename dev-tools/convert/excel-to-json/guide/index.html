@@ -70,6 +70,42 @@
   .q{font-weight:700}
   .a{color:var(--text-dim)}
   .footer{position:fixed;left:0;bottom:0;width:100%;height:var(--footer-h);display:flex;align-items:center;justify-content:center;background:var(--panel);color:#cfd7e4;border-top:1px solid var(--panel-border)}
+  
+/* ===== 모바일 전용(≤960px) 오버라이드: PC는 영향 없음 ===== */
+/* ===== 모바일 전용(≤960px) 버튼/레이아웃 보정 ===== */
+@media (max-width: 960px){
+  /* 컨테이너 가로 넘침 방지 */
+  .container{
+    width: 100% !important;
+    padding: 16px 12px 20px !important;
+    box-sizing: border-box;
+    overflow-x: hidden;                 /* ← 가로 스크롤 차단 */
+  }
+
+  /* 버튼 두 개 세로 스택 + 폭 100% */
+  .btns{
+    display: flex !important;
+    flex-direction: column !important;  /* ← 세로 정렬 */
+    gap: 10px !important;
+    margin-top: 10px !important;
+    min-width: 0;                       /* flex 자식 수축 허용 */
+  }
+  .btn{
+    display: flex !important;
+    width: 100% !important;             /* ← 화면 폭에 딱 맞춤 */
+    max-width: 100% !important;
+    min-width: 0 !important;            /* ← 내용 길어도 넘치지 않게 */
+    box-sizing: border-box !important;  /* ← padding/border 포함해서 100% */
+    justify-content: center;
+    align-items: center;
+    padding: 10px 12px !important;      /* 과한 높이 방지 */
+    line-height: 1.2;
+  }
+  .btn .material-icons-outlined{ font-size: 18px; flex: 0 0 auto; }
+
+  /* 카드 내부 라운드가 잘리는 느낌 방지(선택) */
+  .card{ overflow: hidden; }
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Excel → JSON 변환기","description":"첫 행을 키로 인식해 JSON 배열을 생성합니다. 날짜/숫자 타입 자동 감지.","inLanguage":"ko-KR","publisher":{"@type":"Organization","name":"Playground"},"url":"https://ofsimple.com/dev-tools/convert/excel-to-json/guide/"}</script>
 </head>
