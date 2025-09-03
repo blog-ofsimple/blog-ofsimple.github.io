@@ -149,48 +149,50 @@
          * ============================*/
         /* 기본: PC 광고만 보이게 */
         /* 하단 고정 배너 바 */
-        .bottom-dock {
-            position: fixed;
-            left: 0; right: 0; bottom: 0;
-            display: grid;
-            grid-template-rows: auto var(--footer-h);  /* 위: 광고, 아래: 푸터 */
-            z-index: 1000;
+        :root {
+            --ad-h: 90px;      /* PC: 728x90 */
+            --footer-h: 56px;  /* PC footer height */
         }
 
-        /* 광고 줄 */
-        .bottom-dock .ad-footer {
-            display: flex; justify-content: center; align-items: center;
+        /* 컨텐츠가 광고+푸터에 가려지지 않게 바닥 여백 */
+        .container.pb-footer {
+            padding-bottom: calc(var(--footer-h) + var(--ad-h) + env(safe-area-inset-bottom,0px));
+        }
+
+        /* 광고 (메뉴 아래 인플로우) */
+        .ad-below-menu {
+            margin: 16px auto 0;
+            text-align: center;
+            line-height: 0;
             background: var(--bg);
-            line-height: 0; padding: 6px 0;
+            padding: 6px 0;
         }
 
-        /* 푸터 줄(더 이상 position:fixed 쓰지 않음) */
-        .bottom-dock .footer {
-            height: var(--footer-h);
-            display: flex; align-items: center; justify-content: center;
-            background: var(--panel); color: #cfd7e4; border-top: 1px solid var(--panel-border);
-            padding: 0 16px;
+        /* ins 광고 블록 중앙 정렬 */
+        .ad-below-menu .adsbygoogle {
+            display: block !important;
+            margin: 0 auto !important;
         }
 
-        /* iOS 하단 안전영역 */
-        @supports (padding: max(0px)) {
-            .bottom-dock .ad-footer,
-            .bottom-dock .footer {
-                padding-left:  max(6px, env(safe-area-inset-left));
-                padding-right: max(6px, env(safe-area-inset-right));
+        /* 기기 분기: 기본 PC */
+        .ad-pc { display:block; }
+        .ad-mo { display:none; }
+
+        /* 모바일 전환 */
+        @media (max-width: 900px) {
+            :root {
+                --ad-h: 100px;   /* MO: 320x100 */
+                --footer-h: 60px;
+            }
+
+            .ad-pc { display:none; }
+            .ad-mo { display:block; }
+
+            .container.pb-footer {
+                padding-bottom: calc(var(--footer-h) + var(--ad-h) + env(safe-area-inset-bottom,0px));
             }
         }
 
-        /* 광고 ins 중앙 정렬 + 기기 분기 */
-        .ad-pc { display:block; }
-        .ad-mo { display:none; }
-        .bottom-dock .adsbygoogle { display:block !important; margin:0 auto !important; }
-
-        @media (max-width: 900px){
-            :root{ --footer-h: 60px; }
-            .ad-pc{ display:none; }
-            .ad-mo{ display:block; }
-        }
         /* ============================
            ✅ 모바일 최적화(<=900px)
            ============================ */
@@ -245,11 +247,6 @@
             <p class="intro-desc">
                 각 도구는 <b>가이드(/guide)</b>와 <b>실행</b>으로 구성됩니다. 모든 데이터는 로컬에서만 동작합니다. 서버로 전송되지 않습니다.
             </p>
-<!--            <div class="btns">-->
-<!--                <a class="btn" href="/" aria-label="홈">홈</a>-->
-<!--                <a class="btn" href="/guide/" aria-label="가이드 홈">가이드 홈</a>-->
-<!--&lt;!&ndash;                <button class="btn primary" id="openAppBtn" aria-label="메뉴 열기">메뉴 열기</button>&ndash;&gt;-->
-<!--            </div>-->
         </section>
 
         <!-- 검색 + 탭 + 메뉴 -->
@@ -262,34 +259,34 @@
 
         <nav id="tabs" class="tabs-local"></nav>
         <section id="rows" class="rows" aria-live="polite"></section>
-    </div>
 
-    <!-- AD BEGIN -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3445342751894448"
-            crossorigin="anonymous"></script>
+        <!-- AD BEGIN -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3445342751894448"
+                crossorigin="anonymous"></script>
 
-    <div class="bottom-dock">
-        <div class="ad-footer">
-            <!-- Footer PC - INDEX -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:728px;height:90px"
+        <!-- ✅ 메뉴 아래 ‘인플로우’ 광고 -->
+        <div class="ad-below-menu">
+            <!-- PC: 728x90 -->
+            <ins class="adsbygoogle ad-pc"
+                 style="width:728px;height:90px"
                  data-ad-client="ca-pub-3445342751894448"
                  data-ad-slot="5418915732"></ins>
 
-            <!-- Footer AD - MO -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:320px;height:100px"
+            <!-- 모바일: 320x100 -->
+            <ins class="adsbygoogle ad-mo"
+                 style="width:320px;height:100px"
                  data-ad-client="ca-pub-3445342751894448"
                  data-ad-slot="4373976119"></ins>
         </div>
-        <footer class="footer">© <span id="year"></span> ofsimple.com</footer>
-    </div>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <!-- AD END-->
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <!-- AD END-->
 
-<!--    <footer class="footer">© <span id="year"></span> ofsimple.com</footer>-->
+    </div>
+
+    <footer class="footer">© <span id="year"></span> ofsimple.com</footer>
+
 </div>
 
 <!-- SPA mount -->
