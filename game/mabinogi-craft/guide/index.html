@@ -35,8 +35,6 @@
   }
   a{color:inherit;text-decoration:none}
 
- /* ... 기존 스타일 ... */
-
   .home-link {
     display:flex; align-items:center; gap:6px;
     color:#cfd7e4; opacity:.9;
@@ -44,49 +42,101 @@
     border:1px solid rgba(255,255,255,.08);
     background:rgba(255,255,255,.02);
     transition:background-color .15s, border-color .15s, opacity .15s;
+    touch-action:manipulation;
   }
   .home-link:hover { opacity:1; background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.14); }
   .home-link .material-icons-outlined { font-size:18px; line-height:18px; }
   .brand { font-weight:700; color:#fff; opacity:.9; }
-  
-  .topbar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:var(--panel);border-bottom:1px solid var(--panel-border)}
-  /*.brand{font-weight:700;color:#fff;opacity:.9}*/
 
-  .container{width:clamp(960px,80vw,1200px);margin:0 auto;padding:18px 20px 24px}
+  .topbar{
+    height:64px; display:flex; align-items:center; justify-content:space-between;
+    padding:0 20px; background:var(--panel); border-bottom:1px solid var(--panel-border)
+  }
+
+  /* 데스크톱: 중앙 고정 폭(가변 상한) */
+  .container{
+    width:min(100%, 1200px);
+    margin:0 auto;
+    padding:18px 20px 24px;
+    box-sizing:border-box;
+  }
+
   h1{font-size:28px;margin:14px 0 6px}
   .desc{color:var(--text-dim);margin:0 0 10px}
   .chipbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}
   .chip{padding:6px 10px;border:1px solid #3a3a3a;border-radius:8px;background:#202226;color:#bcd0ff}
   .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px;margin:10px 0}
   .btns{display:flex;gap:8px;margin-top:8px}
-  .btn{padding:9px 12px;border-radius:10px;font-size:14px;border:1px solid #2c3350;background:#1b2030;color:#dfe6f2;display:inline-flex;align-items:center;gap:8px}
+  .btn{
+    min-height:44px; /* 터치 타깃 */
+    padding:10px 12px;border-radius:10px;font-size:14px;
+    border:1px solid #2c3350;background:#1b2030;color:#dfe6f2;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    cursor:pointer; touch-action:manipulation;
+  }
   .btn.primary{border-color:var(--primary);background:#17243d}
   .btn .material-icons-outlined{font-size:18px}
 
   .section-title{font-size:18px;font-weight:700;margin:12px 0 6px}
   ul{margin:8px 0 12px 20px}
   li{margin:4px 0}
+
   .faq-item{margin:8px 0}
   .q{font-weight:700}
   .a{color:var(--text-dim)}
-  .footer{position:fixed;left:0;bottom:0;width:100%;height:var(--footer-h);display:flex;align-items:center;justify-content:center;background:var(--panel);color:#cfd7e4;border-top:1px solid var(--panel-border)}
+
+  /* 데스크톱 기본: 고정 푸터 */
+  .footer{
+    position:fixed; left:0; bottom:0; width:100%;
+    height:var(--footer-h);
+    display:flex; align-items:center; justify-content:center;
+    background:var(--panel); color:#cfd7e4; border-top:1px solid var(--panel-border)
+  }
+
+  /* ====== 반응형 (모바일/태블릿) ====== */
+  @media (max-width: 960px){
+    .topbar{
+      position:sticky; top:0; z-index:10;
+      height:56px; padding:0 12px;
+    }
+    h1{font-size:22px}
+    .section-title{font-size:16px}
+    .chip{padding:5px 8px; font-size:13px}
+
+    .container{
+      width:100%;
+      padding:16px 12px 20px; /* 아래쪽 기본 여유 */
+    }
+
+    .btns{flex-direction:column}
+    .btn{width:100%}
+
+    /* 모바일에선 푸터를 고정하지 않고 자연 흐름으로 배치 */
+    .footer{
+      position:static;
+      height:auto;
+      padding:12px;
+    }
+
+    /* 만약 광고 영역이 너무 커 보이면 높이 축소 */
+    .ad-box{height:72px}
+  }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"마비노기 크래프트","description":"마비노기(모바일) 제작 시스템 계산기. 제작식 선택 시 요구 재료 시간을 자동 합산하여 안내합니다.","inLanguage":"ko-KR","publisher":{"@type":"Organization","name":"Playground"},"url":"https://ofsimple.com/game/mabinogi-craft/guide/"}</script>
 </head>
 <body>
 <header class="topbar">
-  <!-- ⬅️ 좌측: 홈으로 -->
   <a class="home-link" href="/" aria-label="홈으로 이동">
     <span class="material-icons-outlined" aria-hidden="true">home</span>
     <span>Home</span>
   </a>
-
-  <!-- ➡️ 우측: 브랜드(Playground) -->
   <div class="brand">Playground</div>
 </header>
+
 <main class="container">
   <h1>마비노기 크래프트</h1>
   <p class="desc">마비노기(모바일) 제작 시스템 계산기. 제작식 선택 시 요구 재료 시간을 자동 합산하여 안내합니다.</p>
+
   <div class="chipbar">
     <span class="chip"><span class="material-icons-outlined">info</span> 가이드</span>
     <span class="chip"><span class="material-icons-outlined">bolt</span> 클라이언트 처리</span>
@@ -110,7 +160,7 @@
     <div style="margin:8px 0;color:var(--text-dim)">Sponsored</div>
     <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> -->
-    <div style="height:90px;border:1px dashed #3a3a3a;border-radius:8px;display:grid;place-items:center;color:#8aa0ff">Ad Placeholder</div>
+    <div class="ad-box" style="height:90px;border:1px dashed #3a3a3a;border-radius:8px;display:grid;place-items:center;color:#8aa0ff">Ad Placeholder</div>
   </section>
 </main>
 
