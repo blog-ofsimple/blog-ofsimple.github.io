@@ -143,6 +143,31 @@
         #landing-shell{display:block}
         #root{display:none}
 
+
+        /* ============================
+         *  AD
+         * ============================*/
+        /* 기본: PC 광고만 보이게 */
+        .ad-pc { display: block; }
+        .ad-mo { display: none; }
+        .ad-footer {
+            position: fixed;
+            left: 0;
+            bottom: var(--footer-h);  /* footer 높이만큼 위 */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: var(--bg);   /* 배경색 지정해주면 깔끔 */
+            z-index: 999;            /* footer보다 뒤로 안 가게 */
+            line-height: 0;
+            padding: 4px 0;
+        }
+        /* 900px 이하 → 모바일 광고 보이게 */
+        @media (max-width: 900px) {
+            .ad-pc { display: none; }
+            .ad-mo { display: block; }
+        }
+
         /* ============================
            ✅ 모바일 최적화(<=900px)
            ============================ */
@@ -217,6 +242,7 @@
     </div>
 
     <div class="ad-footer">
+        <!-- PC -->
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3445342751894448"
                 crossorigin="anonymous"></script>
         <!-- Footer PC - INDEX -->
@@ -224,6 +250,12 @@
              style="display:inline-block;width:728px;height:90px"
              data-ad-client="ca-pub-3445342751894448"
              data-ad-slot="5418915732"></ins>
+
+        <!-- Footer AD - MO -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:320px;height:100px"
+             data-ad-client="ca-pub-3445342751894448"
+             data-ad-slot="4373976119"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
