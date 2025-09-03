@@ -160,35 +160,55 @@
         }
 
         /* 광고 (메뉴 아래 인플로우) */
-        .ad-below-menu {
-            margin: 16px auto 0;
-            text-align: center;
+        .ad-below-menu{
+            /* 컨테이너 안에 있어도 가로로 꽉 채워 가운데 정렬 */
+            width: 100%;
+            margin: 12px 0 0;
             line-height: 0;
             background: var(--bg);
+
+            /* 중앙정렬을 두 겹으로: flex + text-align (inline-block도 OK) */
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+            /* 좌우 패딩은 0으로 — 컨테이너 패딩 영향 최소화 */
             padding: 6px 0;
+
+            /* 혹시 수평 스크롤 방지 */
+            overflow: hidden;
         }
 
-        /* ins 광고 블록 중앙 정렬 */
-        .ad-below-menu .adsbygoogle {
+        /* 광고 ins: 어떤 방식이든 가운데 오도록 둘 다 켜줌 */
+        .ad-below-menu .adsbygoogle{
+            /* 방식 B */
             display: block !important;
             margin: 0 auto !important;
+
+            /* 방식 A 대비: inline-block도 허용 */
+            /* 필요하면 주석 해제
+               display: inline-block !important;
+            */
         }
 
-        /* 기기 분기: 기본 PC */
-        .ad-pc { display:block; }
-        .ad-mo { display:none; }
+        /* PC/Mobile 토글 */
+        .ad-pc{ display: inline-block; }  /* PC에서도 inline-block 허용 */
+        .ad-mo{ display: none; }
+
 
         /* 모바일 전환 */
-        @media (max-width: 900px) {
-            :root {
-                --ad-h: 100px;   /* MO: 320x100 */
+        @media (max-width: 900px){
+            :root{
+                --ad-h: 100px;  /* 320x100 */
                 --footer-h: 60px;
             }
 
-            .ad-pc { display:none; }
-            .ad-mo { display:block; }
+            /* 모바일에선 모바일 광고만 */
+            .ad-pc{ display: none; }
+            .ad-mo{ display: inline-block; }
 
-            .container.pb-footer {
+            /* 컨텐츠가 광고+푸터에 가리지 않게 바닥 여백 */
+            .container.pb-footer{
                 padding-bottom: calc(var(--footer-h) + var(--ad-h) + env(safe-area-inset-bottom,0px));
             }
         }
