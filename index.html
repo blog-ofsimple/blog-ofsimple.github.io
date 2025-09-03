@@ -34,6 +34,7 @@
             --ROW-H: 64px;
             --ROW-W: clamp(320px, 32vw, 440px);  /* PC 기본 폭 */
             --footer-h: 56px;
+
         }
 
         html,body{margin:0;padding:0;height:100%}
@@ -145,71 +146,62 @@
 
 
         /* ============================
-         *  AD
-         * ============================*/
-        /* 기본: PC 광고만 보이게 */
-        /* 하단 고정 배너 바 */
+ *  AD (메뉴 아래 인플로우)
+ * ============================*/
         :root {
             --ad-h: 90px;      /* PC: 728x90 */
             --footer-h: 56px;  /* PC footer height */
         }
 
-        /* 컨텐츠가 광고+푸터에 가려지지 않게 바닥 여백 */
+        /* 컨텐츠가 광고+푸터에 가려지지 않게 바닥 여백 확보 */
         .container.pb-footer {
             padding-bottom: calc(var(--footer-h) + var(--ad-h) + env(safe-area-inset-bottom,0px));
         }
 
         /* 광고 (메뉴 아래 인플로우) */
-        .ad-below-menu{
-            /* 컨테이너 안에 있어도 가로로 꽉 채워 가운데 정렬 */
-            width: 100%;
-            margin: 12px 0 0;
+        .ad-below-menu {
+            width: 100vw;                 /* 컨테이너 폭 무시, 화면 전체 폭 기준 */
+            margin-left: 50%;             /* 화면 기준 정렬 */
+            transform: translateX(-50%);  /* 정확한 중앙 */
             line-height: 0;
             background: var(--bg);
-
-            /* 중앙정렬을 두 겹으로: flex + text-align (inline-block도 OK) */
-            display: flex;
-            justify-content: center;
-            text-align: center;
-
-            /* 좌우 패딩은 0으로 — 컨테이너 패딩 영향 최소화 */
             padding: 6px 0;
 
-            /* 혹시 수평 스크롤 방지 */
-            overflow: hidden;
+            display: grid;                /* 내부 요소 중앙 정렬 */
+            place-items: center;
+            overflow: hidden;             /* 혹시 수평 스크롤 방지 */
         }
 
-        /* 광고 ins: 어떤 방식이든 가운데 오도록 둘 다 켜줌 */
-        .ad-below-menu .adsbygoogle{
-            /* 방식 B */
-            display: block !important;
+        /* 광고 ins 중앙 */
+        .ad-below-menu .adsbygoogle {
+            display: inline-block !important;  /* 고정폭 광고를 inline-block으로 */
             margin: 0 auto !important;
-
-            /* 방식 A 대비: inline-block도 허용 */
-            /* 필요하면 주석 해제
-               display: inline-block !important;
-            */
         }
 
-        /* PC/Mobile 토글 */
-        .ad-pc{ display: inline-block; }  /* PC에서도 inline-block 허용 */
-        .ad-mo{ display: none; }
-
+        /* 기본: PC 광고만 */
+        .ad-pc { display:inline-block; }
+        .ad-mo { display:none; }
 
         /* 모바일 전환 */
-        @media (max-width: 900px){
-            :root{
-                --ad-h: 100px;  /* 320x100 */
+        @media (max-width: 900px) {
+            :root {
+                --ad-h: 100px;   /* 모바일: 320x100 */
                 --footer-h: 60px;
             }
 
-            /* 모바일에선 모바일 광고만 */
-            .ad-pc{ display: none; }
-            .ad-mo{ display: inline-block; }
+            .ad-pc { display:none; }
+            .ad-mo { display:inline-block; }
 
-            /* 컨텐츠가 광고+푸터에 가리지 않게 바닥 여백 */
-            .container.pb-footer{
+            .container.pb-footer {
                 padding-bottom: calc(var(--footer-h) + var(--ad-h) + env(safe-area-inset-bottom,0px));
+            }
+        }
+
+        /* iOS 안전영역 보정 */
+        @supports (padding: max(0px)) {
+            .ad-below-menu {
+                padding-left:  max(0px, env(safe-area-inset-left));
+                padding-right: max(0px, env(safe-area-inset-right));
             }
         }
 
@@ -284,17 +276,17 @@
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3445342751894448"
                 crossorigin="anonymous"></script>
 
-        <!-- ✅ 메뉴 아래 ‘인플로우’ 광고 -->
+        <!-- ✅ 메뉴 아래 인플로우 광고 (뷰포트 기준 중앙) -->
         <div class="ad-below-menu">
-            <!-- PC: 728x90 -->
+            <!-- PC 728x90 -->
             <ins class="adsbygoogle ad-pc"
-                 style="width:728px;height:90px"
+                 style="display:inline-block;width:728px;height:90px"
                  data-ad-client="ca-pub-3445342751894448"
                  data-ad-slot="5418915732"></ins>
 
-            <!-- 모바일: 320x100 -->
+            <!-- Mobile 320x100 -->
             <ins class="adsbygoogle ad-mo"
-                 style="width:320px;height:100px"
+                 style="display:inline-block;width:320px;height:100px"
                  data-ad-client="ca-pub-3445342751894448"
                  data-ad-slot="4373976119"></ins>
         </div>
