@@ -20,24 +20,17 @@
 </html> -->
 
 
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
   <title>Redirecting...</title>
   <script>
-    // query + hash까지 포함해서 원래 URL을 최대한 정확히 보존
-    var full = window.location.pathname + window.location.search + window.location.hash;
-
-    // 선행 "/" 제거해서 index.html에서 복원하기 쉽게 (ex: "dev-tools/markdown-editor?x=1#y")
-    var normalized = full.replace(/^\/+/, "");
-
-    // 무한 루프 방지
-    if (normalized.startsWith("index.html")) {
-      window.location.replace("/");
-    } else {
-      window.location.replace("/index.html?redirect=" + encodeURIComponent(normalized));
-    }
+    // "/test/aaa?x=y" → "/test/index.html?redirect=/aaa?x=y"
+    const base = "/"; // 👈 본인 base와 일치하게 설정
+    const fullPath = location.pathname + location.search;
+    const path = fullPath.replace(new RegExp(`^${base}`), "");
+    location.replace(`${base}/index.html?redirect=${encodeURIComponent(path)}`);
   </script>
 </head>
 <body></body>
