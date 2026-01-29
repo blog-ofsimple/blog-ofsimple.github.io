@@ -58,8 +58,10 @@
         }
 
         #landing-shell{
-            height:100vh;
+            position:fixed;
+            inset:0;
             overflow-y:auto;
+            -webkit-overflow-scrolling:touch;
             scrollbar-width:none;
         }
         #landing-shell::-webkit-scrollbar{
@@ -220,7 +222,7 @@
         /* Footer */
         .footer{
             position:fixed; left:0; bottom:0; width:100%;
-            height:90px; display:flex; align-items:center; justify-content:center;
+            height:var(--footer-h); display:flex; align-items:center; justify-content:center;
             background:var(--card); color:var(--text-dim); border-top:1px solid var(--card-border);
             z-index:1000; padding:0 16px;
             padding-bottom: calc(env(safe-area-inset-bottom,0px));
@@ -259,7 +261,7 @@
         @media (max-width: 900px) {
             :root {
                 --ad-h: 100px;
-                --footer-h: 60px;
+                --footer-h: 48px;
             }
 
             .ad-pc { display:none; }
@@ -408,7 +410,7 @@
 
 <div id="landing-shell">
     <header class="topbar">
-        <div class="brand">OfSimple (</div>
+        <div class="brand">OfSimple</div>
         <div style="width:40px"></div>
     </header>
 
