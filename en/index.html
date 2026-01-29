@@ -1,24 +1,24 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <title>ofsimple.com - 무료 도구 모음</title>
+    <title>ofsimple.com – Free Online Tools</title>
 
-    <meta name="description" content="ofsimple.com은 이미지 변환, 색상 분석, 데이터 변환, 개발 도구, 무료 게임 등 다양한 웹 도구를 제공합니다. 모든 기능은 브라우저에서 로컬로 실행되며, 어떠한 정보도 서버로 전송되지 않습니다.">
-    <meta name="keywords" content="ofsimple, 이미지 도구, 개발 도구, 유틸리티, QR 생성기, JSON 도구, OpenAPI, 색상 팔레트, HTML 탐색, 로또 분석, 무료 웹 도구">
+    <meta name="description" content="ofsimple.com offers free online tools for images, colors, data conversion, developer utilities, and simple web games. Everything runs locally in your browser and no data is sent to servers.">
+    <meta name="keywords" content="ofsimple, free online tools, image tools, developer tools, utilities, QR code generator, JSON tools, OpenAPI viewer, color palette, HTML viewer, lotto statistics, privacy-first">
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#1976d2" />
-    <link rel="canonical" href="https://ofsimple.com/" />
+    <link rel="canonical" href="https://ofsimple.com/en" />
     <link rel="alternate" hreflang="ko" href="https://ofsimple.com/" />
     <link rel="alternate" hreflang="en" href="https://ofsimple.com/en" />
     <link rel="alternate" hreflang="x-default" href="https://ofsimple.com/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="ofsimple.com - 무료 웹 도구 모음" />
-    <meta property="og:description" content="이미지, 데이터, 개발, 게임 등 다양한 무료 웹 도구. 모든 기능은 로컬에서만 실행되며, 어떠한 정보도 서버에 전송되지 않습니다." />
-    <meta property="og:url" content="https://ofsimple.com/" />
+    <meta property="og:title" content="ofsimple.com – Free Online Tools Collection" />
+    <meta property="og:description" content="A collection of free, privacy-first web tools for images, data, developers, and everyday tasks. Runs locally in your browser." />
+    <meta property="og:url" content="https://ofsimple.com/en" />
     <meta property="og:site_name" content="ofsimple.com" />
 
     <!-- AdSense -->
@@ -416,13 +416,6 @@
         })
       })()
     </script>
-  <script type="module" crossorigin src="/assets/index-DFvjL7CF.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/excel-CUMakpxJ.js">
-  <link rel="modulepreload" crossorigin href="/assets/tree-sitter-B45I1zdL.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-DKqYS5EO.js">
-  <link rel="modulepreload" crossorigin href="/assets/mui-Lc6_wn4i.js">
-  <link rel="stylesheet" crossorigin href="/assets/vendor-DyX1CsEw.css">
-  <link rel="stylesheet" crossorigin href="/assets/index-D3tSjr7H.css">
 </head>
 <body>
 
@@ -436,8 +429,11 @@
         <section class="hero">
             <h1 class="hero-title">OfSimple</h1>
             <p class="hero-desc">
-                각 도구는 가이드(/guide)와 실행으로 구성됩니다.<span class="hero-break"><br></span>
-                모든 데이터는 로컬에서만 동작합니다. 서버로 전송되지 않습니다.
+                Each tool includes a Guide page (/guide) and an Open action.<span class="hero-break"><br></span>
+                Everything runs locally in your browser. No data is sent to servers.
+            </p>
+            <p class="hero-desc" style="margin-top:6px;">
+                The tools are currently provided in Korean. However, most features are intuitive and usable.
             </p>
         </section>
 
@@ -449,11 +445,11 @@
         </div>
 
         <div class="tabs-shell">
-            <button type="button" class="tab-nav" id="tabPrev" aria-label="이전 탭">
+            <button type="button" class="tab-nav" id="tabPrev" aria-label="Previous tab">
                 <span class="material-icons-outlined">chevron_left</span>
             </button>
-            <nav id="tabs" class="tabs-local" aria-label="메뉴 그룹 탭"></nav>
-            <button type="button" class="tab-nav" id="tabNext" aria-label="다음 탭">
+            <nav id="tabs" class="tabs-local" aria-label="Menu group tabs"></nav>
+            <button type="button" class="tab-nav" id="tabNext" aria-label="Next tab">
                 <span class="material-icons-outlined">chevron_right</span>
             </button>
         </div>
@@ -504,6 +500,360 @@
 
 <div id="root"></div>
 
+<script type="module">
+    const rootEl = document.getElementById('root');
+    const landingShell = document.getElementById('landing-shell');
+    const tabsEl = document.getElementById('tabs');
+    const rowsEl = document.getElementById('rows');
+    const yearEl = document.getElementById('year');
+    const searchInput = document.getElementById('searchInput');
+    const tabPrev = document.getElementById('tabPrev');
+    const tabNext = document.getElementById('tabNext');
+    yearEl.textContent = String(new Date().getFullYear());
 
+    const routePrefixes = ['/tools/', '/dev-tools/', '/image/', '/statistics/', '/fun/', '/setting/', '/viewer/', '/game/'];
+    const isGuidePath = location.pathname.includes('/guide/');
+    const shouldShowLanding = !isGuidePath && !routePrefixes.some((prefix) => location.pathname.includes(prefix));
+
+    const urlPlatform = new URL(location.href).searchParams.get("platform");
+    const isCoarse = matchMedia("(pointer: coarse)").matches;
+    const isFixedPlatform = urlPlatform === "pc" || urlPlatform === "mo";
+    const resolvePlatform = () => {
+        if (isFixedPlatform) return urlPlatform;
+        return isCoarse || window.innerWidth <= 900 ? "mo" : "pc";
+    };
+    let currentPlatform = resolvePlatform();
+
+    const isDevHost = /localhost|127\\.0\\.0\\.1|192\\.168\\.|0\\.0\\.0\\.0/.test(location.hostname);
+    const CURRENT_ENV = isDevHost ? "development" : "production";
+
+    const ICON_MAP = {
+        AccessTime: "access_time",
+        AutoAwesome: "auto_awesome",
+        BarChart: "bar_chart",
+        CodeOutlined: "code",
+        Color: "palette",
+        Description: "description",
+        DescriptionOutlined: "description",
+        DesignServicesOutlined: "design_services",
+        Gamepad: "sports_esports",
+        Grid4x4Outlined: "grid_4x4",
+        HistoryOutlined: "history",
+        MenuBook: "menu_book",
+        MusicNote: "music_note",
+        Numbers: "numbers",
+        Pattern: "pattern",
+        PhotoOutlined: "photo",
+        QrCode: "qr_code",
+        QueryStats: "query_stats",
+        Schema: "schema",
+        Search: "search",
+        Settings: "settings",
+        Storage: "storage",
+        Straighten: "straighten",
+        SyncAltOutlined: "sync_alt",
+        TableChartRounded: "table_chart",
+        Upcoming: "upcoming",
+    };
+
+    function mapIcon(iconName) {
+        return ICON_MAP[iconName] || "extension";
+    }
+
+    function normalizePlatform(platforms) {
+        if (!platforms || platforms.length === 0) return "both";
+        const set = new Set(platforms);
+        const hasPc = set.has("pc");
+        const hasMo = set.has("mobile") || set.has("mo");
+        if (hasPc && hasMo) return "both";
+        if (hasMo) return "mo";
+        return "pc";
+    }
+
+    function supportsPlatform(p = "both") {
+        if (!p || p === "both") return true;
+        return p === currentPlatform;
+    }
+
+    function supportsEnvironment(envs) {
+        if (!envs || envs.length === 0) return true;
+        return envs.includes(CURRENT_ENV);
+    }
+
+    function buildMenuData(config) {
+        return (config || [])
+            .filter(group => !(group.isHide ?? false))
+            .map(group => {
+                const children = (group.children || [])
+                    .filter(child => child.type !== "divider")
+                    .filter(child => !(child.isHide ?? false))
+                    .filter(child => supportsEnvironment(child.environments))
+                    .map(child => ({
+                        label: child.label,
+                        path: child.route,
+                        icon: mapIcon(child.icon),
+                        platforms: normalizePlatform(child.platform),
+                        desc: child.description || "",
+                    }))
+                    .filter(child => supportsPlatform(child.platforms));
+
+                return {
+                    id: group.id,
+                    label: groupLabel(group),
+                    platforms: "both",
+                    children,
+                };
+            })
+            .filter(group => (group.children || []).length > 0);
+    }
+
+    let menuData = [];
+    let rawMenuConfig = [];
+
+    const THEME_STORAGE_KEY = 'setting';
+    const DEFAULT_THEME_ID = 'default';
+    const FALLBACK_THEME = {
+        id: DEFAULT_THEME_ID,
+        mode: 'light',
+        palette: {
+            primary: '#1976d2',
+            primaryContrast: '#ffffff',
+            background: { default: '#f5f5f5', paper: '#ffffff' },
+            text: { primary: '#1a1d26', secondary: '#4b5563' },
+        },
+    };
+
+    function parseStoredThemeId() {
+        try {
+            const raw = localStorage.getItem(THEME_STORAGE_KEY);
+            if (!raw) return DEFAULT_THEME_ID;
+            const parsed = JSON.parse(raw);
+            return typeof parsed.theme === 'string' ? parsed.theme : DEFAULT_THEME_ID;
+        } catch (e) {
+            return DEFAULT_THEME_ID;
+        }
+    }
+
+    function applyThemeVars(theme) {
+        const root = document.documentElement;
+        const palette = theme.palette || {};
+        const bg = (palette.background || {}).default || FALLBACK_THEME.palette.background.default;
+        const paper = (palette.background || {}).paper || FALLBACK_THEME.palette.background.paper;
+        const primary = palette.primary || FALLBACK_THEME.palette.primary;
+        const textPrimary = (palette.text || {}).primary || FALLBACK_THEME.palette.text.primary;
+        const textSecondary = (palette.text || {}).secondary || FALLBACK_THEME.palette.text.secondary;
+        const isDark = theme.mode === 'dark';
+
+        root.style.setProperty('--primary', primary);
+        root.style.setProperty('--bg', bg);
+        root.style.setProperty('--card', paper);
+        root.style.setProperty('--text', textPrimary);
+        root.style.setProperty('--text-dim', textSecondary);
+        root.style.setProperty('--panel', primary);
+        root.style.setProperty('--panel-border', isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.08)');
+        root.style.setProperty('--card-border', isDark ? '#2b2f36' : '#e5e7eb');
+        root.style.setProperty('--hover', isDark ? 'rgba(255,255,255,0.08)' : '#eef1f4');
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta) {
+            themeMeta.setAttribute('content', primary);
+        }
+    }
+
+    async function loadThemesAndApply() {
+        const themeId = parseStoredThemeId();
+        try {
+            const res = await fetch('/themes.json', { cache: 'no-cache' });
+            if (!res.ok) throw new Error('themes.json fetch failed');
+            const list = await res.json();
+            const selected = (list || []).find((item) => item.id === themeId) || list?.[0] || FALLBACK_THEME;
+            applyThemeVars(selected);
+        } catch (e) {
+            applyThemeVars(FALLBACK_THEME);
+        }
+    }
+
+    async function loadMenu() {
+        try {
+            const res = await fetch("/menu.json", { cache: "no-cache" });
+            if (!res.ok) throw new Error("menu.json fetch failed");
+            const config = await res.json();
+            rawMenuConfig = config;
+            menuData = buildMenuData(config);
+        } catch (e) {
+            console.error(e);
+            menuData = [];
+        }
+    }
+
+    
+    const GROUP_LABEL_EN = {"image_design_tools": "Image & Design", "utility_tools": "Life & Utilities", "fun_tools": "Fun & Experiments", "dev_markdown_tools": "Document Tools", "study_tools": "Study & Memorization", "statistics_tools": "Statistics", "convert_dev_tools": "Developer Tools", "coming_soon": "Coming Soon", "administration": "Settings", "games": "Games"};
+    function groupLabel(group){
+        if (!group) return '';
+        const id = group.id;
+        return (id && GROUP_LABEL_EN[id]) ? GROUP_LABEL_EN[id] : (group.label || '');
+    }
+function getPlatformGroups() {
+        const allItems = menuData.flatMap((group) => group.children || []);
+        return [{ label: "All", children: allItems }, ...menuData];
+    }
+
+    let activeTab = 0;
+    const basePath = location.pathname.replace(/\/index\.html$/, '/');
+    const baseUrl = `${location.origin}${basePath}`;
+    const guidePath = (p) => (p.endsWith('/') ? p + 'guide/' : p + '/guide/');
+    const toAbsolute = (p) => new URL(p.replace(/^\//, ''), baseUrl).toString();
+
+    function renderTabs(){
+        const platformGroups = getPlatformGroups();
+        if (activeTab >= platformGroups.length) activeTab = Math.max(platformGroups.length - 1, 0);
+
+        tabsEl.innerHTML = '';
+        platformGroups.forEach((g, idx) => {
+            const el = document.createElement('span');
+            el.className = 'tab' + (idx === activeTab ? ' active' : '');
+            el.textContent = g.label;
+            el.tabIndex = 0;
+            el.addEventListener('click', () => { activeTab = idx; renderRows(); highlightTab(); });
+            tabsEl.appendChild(el);
+        });
+        requestAnimationFrame(updateTabNav);
+    }
+
+    function highlightTab(){
+        Array.from(tabsEl.children).forEach((el, i) => {
+            el.classList.toggle('active', i === activeTab);
+        });
+        updateTabNav();
+    }
+
+    function updateTabNav(){
+        const maxScroll = tabsEl.scrollWidth - tabsEl.clientWidth;
+        if (maxScroll <= 0) {
+            tabPrev.setAttribute('disabled', 'true');
+            tabNext.setAttribute('disabled', 'true');
+            tabsEl.parentElement.classList.add('no-scroll');
+            return;
+        }
+        tabsEl.parentElement.classList.remove('no-scroll');
+        tabPrev.toggleAttribute('disabled', tabsEl.scrollLeft <= 0);
+        tabNext.toggleAttribute('disabled', tabsEl.scrollLeft >= maxScroll - 1);
+    }
+
+    tabPrev.addEventListener('click', () => {
+        tabsEl.scrollBy({ left: -220, behavior: 'smooth' });
+    });
+    tabNext.addEventListener('click', () => {
+        tabsEl.scrollBy({ left: 220, behavior: 'smooth' });
+    });
+    tabsEl.addEventListener('scroll', () => updateTabNav());
+    window.addEventListener('resize', () => updateTabNav());
+
+    function createRow(item){
+        const row = document.createElement('div');
+        row.className = 'row';
+
+        const head = document.createElement('div');
+        head.className = 'row-head';
+
+        const icon = document.createElement('div');
+        icon.className = 'row-icon';
+        icon.innerHTML = `<span class="material-icons-outlined">${item.icon || 'extension'}</span>`;
+
+        const textWrap = document.createElement('div');
+        textWrap.className = 'row-text';
+
+        const title = document.createElement('div');
+        title.className = 'row-title';
+        title.textContent = item.label;
+
+        const desc = document.createElement('div');
+        desc.className = 'row-desc';
+        desc.textContent = item.desc || '';
+
+        textWrap.appendChild(title);
+        textWrap.appendChild(desc);
+
+        const acts = document.createElement('div');
+        acts.className = 'row-acts';
+
+        const aGuide = document.createElement('a');
+        aGuide.className = 'link';
+        aGuide.href = toAbsolute(guidePath(item.path));
+        aGuide.textContent = 'Guide';
+
+        const aRun = document.createElement('a');
+        aRun.className = 'link primary';
+        aRun.href = toAbsolute(item.path);
+        aRun.textContent = 'Open';
+
+        acts.appendChild(aGuide);
+        acts.appendChild(aRun);
+
+        head.appendChild(icon);
+        head.appendChild(textWrap);
+        head.appendChild(acts);
+
+        row.appendChild(head);
+        return row;
+    }
+
+    function renderRows(){
+        const platformGroups = getPlatformGroups();
+        const group = platformGroups[activeTab];
+        if (!group) return;
+        const keyword = (searchInput.value || '').toLowerCase().trim();
+
+        rowsEl.innerHTML = '';
+        let count = 0;
+        (group.children || []).forEach(item => {
+            const hay = (item.label + ' ' + (item.desc || '')).toLowerCase();
+            if (keyword && !hay.includes(keyword)) return;
+            rowsEl.appendChild(createRow(item));
+            count += 1;
+        });
+        if (count === 0) {
+            const empty = document.createElement('div');
+            empty.className = 'empty';
+            empty.textContent = 'No results';
+            rowsEl.appendChild(empty);
+        }
+    }
+
+    searchInput.addEventListener('input', () => renderRows());
+
+    async function initLanding() {
+        await loadThemesAndApply();
+        await loadMenu();
+        renderTabs();
+        renderRows();
+    }
+
+    if (!shouldShowLanding) {
+        landingShell.style.display = 'none';
+        rootEl.style.display = 'block';
+        document.body.classList.remove('landing');
+        document.documentElement.classList.remove('landing');
+    } else {
+        document.body.classList.add('landing');
+        document.documentElement.classList.add('landing');
+        initLanding();
+    }
+
+    window.addEventListener('resize', () => {
+        const nextPlatform = resolvePlatform();
+        if (nextPlatform === currentPlatform) {
+            updateTabNav();
+            return;
+        }
+        currentPlatform = nextPlatform;
+        menuData = buildMenuData(rawMenuConfig);
+        activeTab = 0;
+        renderTabs();
+        renderRows();
+    });
+
+</script>
+
+<script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
