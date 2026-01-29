@@ -4,12 +4,16 @@
   <meta charset="utf-8" />
   <title>Redirecting...</title>
   <script>
-    // "/test/aaa?x=y" → "/test/index.html?redirect=/aaa?x=y"
-    const base = "/ofsimple.com/"; // 👈 본인 base와 일치하게 설정
-    // const base = "/playground-geryon.github.io/"; // 👈 본인 base와 일치하게 설정 todo: 배포시 처리
+    // 커스텀 도메인 기준: /index.html?redirect=... 로만 보낸다.
     const fullPath = location.pathname + location.search;
-    const path = fullPath.replace(new RegExp(`^${base}`), "");
-    location.replace(`${base}/index.html?redirect=${encodeURIComponent(path)}`);
+    // 선행 "/" 제거해서 index.html에서 정확히 복원되도록 처리
+    const normalized = fullPath.replace(/^\/+/, "");
+    // 이미 index.html로 들어온 경우에는 루트로 복귀
+    if (normalized.startsWith("index.html")) {
+      location.replace("/");
+    } else {
+      location.replace(`/index.html?redirect=${encodeURIComponent(normalized)}`);
+    }
   </script>
 </head>
 <body></body>
