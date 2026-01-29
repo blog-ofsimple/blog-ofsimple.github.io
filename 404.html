@@ -6,6 +6,7 @@
   <script>
     // "/test/aaa?x=y" → "/test/index.html?redirect=/aaa?x=y"
     const base = "/blog-ofsimple.github.io/"; // 👈 본인 base와 일치하게 설정
+    // const base = "/playground-geryon.github.io/"; // 👈 본인 base와 일치하게 설정
     const fullPath = location.pathname + location.search;
     const path = fullPath.replace(new RegExp(`^${base}`), "");
     location.replace(`${base}/index.html?redirect=${encodeURIComponent(path)}`);
