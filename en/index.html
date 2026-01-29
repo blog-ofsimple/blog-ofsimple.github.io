@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <base href="/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
@@ -699,8 +698,9 @@ function getPlatformGroups() {
     }
 
     let activeTab = 0;
-    const basePath = location.pathname.replace(/\/index\.html$/, '/');
-    const baseUrl = `${location.origin}${basePath}`;
+    // const basePath = location.pathname.replace(/\/index\.html$/, '/');
+    // const baseUrl = `${location.origin}${basePath}`;
+    const baseUrl = `${location.origin}/`;
     const guidePath = (p) => (p.endsWith('/') ? p + 'guide/' : p + '/guide/');
     const toAbsolute = (p) => new URL(p.replace(/^\//, ''), baseUrl).toString();
 
