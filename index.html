@@ -340,7 +340,7 @@
         }
     </style>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       ;(function (l) {
         var params = new URLSearchParams(l.search)
         var redirect = params.get('redirect')
@@ -349,7 +349,21 @@
           window.history.replaceState(null, '', base + redirect + l.hash)
         }
       })(window.location)
-    </script>
+    </script> -->
+    <script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var redirect = params.get("redirect");
+    if (!redirect) return;
+
+    // redirect는 404에서 encodeURIComponent로 넣었으니 decode 후,
+    // 앞의 "/"가 있든 없든 안전하게 정리
+    var target = "/" + decodeURIComponent(redirect).replace(/^\/+/, "");
+
+    // 주소를 "원래 서비스 URI"로 복원
+    window.history.replaceState(null, "", target);
+  })();
+</script>
 
     <script type="text/javascript">
       ;(function () {
