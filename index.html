@@ -21,9 +21,25 @@
     <meta property="og:url" content="https://ofsimple.com/" />
     <meta property="og:site_name" content="ofsimple.com" />
 
-    <!-- AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3445342751894448"
-            crossorigin="anonymous"></script>
+    <!-- AdSense (skip on local/dev hosts) -->
+    <script>
+        (function () {
+            var host = window.location.hostname;
+            var isLocalHost =
+                host === "localhost" ||
+                host === "127.0.0.1" ||
+                host === "[::1]" ||
+                host.endsWith(".local");
+
+            if (isLocalHost) return;
+
+            var script = document.createElement("script");
+            script.async = true;
+            script.crossOrigin = "anonymous";
+            script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3445342751894448";
+            document.head.appendChild(script);
+        })();
+    </script>
 
     <!-- Material Icons Outlined -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -416,11 +432,11 @@
         })
       })()
     </script>
-  <script type="module" crossorigin src="/assets/index-DFvjL7CF.js"></script>
+  <script type="module" crossorigin src="/assets/index-DmY5jYxR.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/excel-CUMakpxJ.js">
   <link rel="modulepreload" crossorigin href="/assets/tree-sitter-B45I1zdL.js">
   <link rel="modulepreload" crossorigin href="/assets/vendor-DKqYS5EO.js">
-  <link rel="modulepreload" crossorigin href="/assets/mui-Lc6_wn4i.js">
+  <link rel="modulepreload" crossorigin href="/assets/mui-CKA5OeiF.js">
   <link rel="stylesheet" crossorigin href="/assets/vendor-DyX1CsEw.css">
   <link rel="stylesheet" crossorigin href="/assets/index-D3tSjr7H.css">
 </head>
