@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Item Story 지원</title>
+    <style>
+      :root { --bg:#fff8ef; --surface:#fff; --text:#24180f; --line:#ead7c4; --brand:#bd5f24; --soft:#fff0df; } * { box-sizing:border-box; }
+      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+      main { width:min(920px,calc(100% - 32px)); margin:auto; padding:32px 0 56px; } header,section { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:24px; margin-bottom:16px; }
+      header { border-top:5px solid var(--brand); } .badge { color:var(--brand); font-size:13px; font-weight:700; } h1 { margin:8px 0; font-size:30px; } h2 { margin:0 0 12px; font-size:21px; } p { margin:0 0 10px; } ul,ol { margin:0; padding-left:22px; } li+li { margin-top:7px; } .contact { background:var(--soft); border:1px solid var(--line); padding:14px 16px; border-radius:8px; } a { color:var(--brand); font-weight:650; }
+      details { border-top:1px solid var(--line); padding:14px 0; } details:first-of-type { border-top:0; padding-top:0; } details:last-of-type { padding-bottom:0; } summary { cursor:pointer; font-weight:700; font-size:17px; } details > div { padding:12px 0 0; color:var(--text); } .note { margin-top:12px; padding:12px 14px; border-radius:8px; background:var(--soft); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header><div class="badge">Item Story</div><h1>고객 지원</h1><p>아이템 정보를 자유롭게 기록하는 온디바이스 앱 Item Story의 지원 페이지입니다.</p><div class="contact"><strong>지원 이메일</strong><br /><a href="mailto:geryon@ofsimple.com">geryon@ofsimple.com</a></div></header>
+      <section><h2>앱 정보</h2><ul><li>앱 이름: Item Story</li><li>버전: 1.0.0</li><li>지원 기기: iPhone / iPad</li><li>지원 언어: 영어 / 한국어 / 일본어</li><li>계정: 필요 없음</li></ul></section>
+      <section>
+        <h2>사용 설명서</h2>
+        <details open><summary>처음 시작하기</summary><div><ol><li><strong>카테고리</strong>에서 새 카테고리를 만들거나 템플릿을 불러온 뒤 필요한 항목을 수정합니다.</li><li>아이템 등록 시 먼저 표시할 카테고리는 기본 카테고리로 설정합니다.</li><li><strong>등록</strong>에서 카테고리를 선택하고 아이템명과 필요한 항목을 입력합니다.</li><li>적용을 누르면 저장되며 새 기록은 <strong>전체</strong>에서 확인할 수 있습니다.</li></ol><p class="note">필수값은 아이템명뿐입니다. 오래되거나 일부 정보만 있는 기록도 저장할 수 있도록 나머지 항목은 비워 둘 수 있습니다.</p></div></details>
+        <details><summary>전체 메뉴</summary><div><ul><li><strong>전체:</strong> 사용 중인 모든 아이템을 봅니다. 카테고리·태그 칩, 검색과 정렬로 목록을 좁힐 수 있습니다.</li><li><strong>반복:</strong> 같은 아이템명으로 2회 이상 등록한 기록의 히스토리와 변경값을 비교하고 PDF로 내보낼 수 있습니다.</li><li><strong>알림:</strong> 알림일이 입력된 기록을 확인합니다. 종 아이콘은 현재 로컬 알림이 예약된 항목을 의미합니다.</li><li><strong>사용자 정의 탭:</strong> 탭 옆 추가 메뉴에서 자주 사용하는 조건을 저장합니다. 만든 탭은 편집, 삭제, 순서 변경할 수 있습니다.</li><li>아이템을 왼쪽으로 밀어 휴지통으로 보내거나, 선택 모드에서 여러 아이템을 한꺼번에 휴지통으로 이동하거나 PDF로 내보낼 수 있습니다.</li><li>선택 PDF는 이미지 포함 여부를 정할 수 있습니다. 생성 또는 공유에 실패하면 선택 상태가 유지되어 다시 시도할 수 있습니다.</li></ul></div></details>
+        <details><summary>카테고리 메뉴</summary><div><ul><li>카테고리는 아이템을 등록할 때 사용하는 입력 템플릿입니다.</li><li>항목을 추가하고 순서를 바꾸며, 고정 아이템명 항목의 표시 이름도 카테고리에 맞게 변경할 수 있습니다.</li><li>문자열, 태그, 금액, 숫자, 전화번호, URL, 이메일, 이미지, 일자, 발생일, 알림일, 드롭다운, 스위치와 체크박스를 지원합니다.</li><li>금액에는 통화를, 숫자에는 단위를, 드롭다운에는 선택값을 설정할 수 있습니다.</li><li>카테고리를 사용 안 함으로 바꿔도 기존 아이템은 유지됩니다. 필요할 때 사용 안 함 탭에서 복구합니다.</li></ul></div></details>
+        <details><summary>아이템 등록, 보기와 편집</summary><div><ul><li>등록 화면 상단에서 카테고리를 선택하면 저장된 순서대로 입력 항목이 표시됩니다.</li><li>이미지 항목에서는 카메라 또는 사진 보관함을 사용할 수 있으며 첨부한 파일은 앱 저장소로 복사됩니다.</li><li>전체 목록의 아이템을 누르면 읽기 전용 상세 화면이 열립니다. 더보기에서 편집, 복사, 개별 PDF 내보내기와 삭제를 실행할 수 있습니다.</li><li>복사는 현재 기록을 이용해 새 초안을 만들며, 복사 화면에서 적용해야 새 아이템으로 저장됩니다.</li><li>카테고리를 변경하면 기존 값을 이동할 카테고리의 항목에 연결할 수 있습니다.</li></ul></div></details>
+        <details><summary>검색, 필터와 정렬</summary><div><ul><li>기본 검색은 검색 가능한 문자열과 태그를 포함한 아이템 값을 찾습니다.</li><li>고급 검색에서는 조건 그룹과 모든 조건·일부 조건 만족 방식을 사용할 수 있습니다.</li><li>자주 사용하는 조건은 사용자 정의 탭으로 저장합니다.</li><li>기본 아이템명·등록일 정렬과 정렬 가능한 사용자 정의 항목을 이용할 수 있습니다.</li></ul></div></details>
+        <details><summary>통계 메뉴</summary><div><ul><li><strong>기간</strong>은 선택한 기간에 포함된 기록을 요약합니다.</li><li><strong>추이</strong>는 일별·월별·연도별 변화를 비교하고 가능한 항목을 그래프로 표시합니다.</li><li>사용자 정의 통계에서는 조건과 개수, 금액 합계, 숫자 평균 또는 값 변화 등의 계산 기준을 설정합니다.</li><li>사용자 정의 통계 결과를 누르면 조건에 일치하는 아이템을 페이지 단위 목록으로 확인할 수 있습니다.</li><li>상단 PDF 아이콘에서 현재 기간 또는 추이 통계를 PDF로 내보낼 수 있습니다.</li><li>발생일 항목이 있으면 통계 기준일로 사용하고, 없으면 해당 기록의 등록일을 사용합니다.</li></ul></div></details>
+        <details><summary>알림 사용하기</summary><div><ul><li>카테고리에 알림일 항목을 추가하고 아이템에 날짜를 입력합니다.</li><li>설정에서 기본 알림 시간과 며칠 전에 알릴지 선택합니다.</li><li>로컬 알림을 받으려면 시스템 알림 권한과 앱 설정의 알림 스위치가 모두 켜져 있어야 합니다.</li><li>알림 탭의 제외 조건에 해당하는 아이템은 로컬 알림 예약에서도 제외됩니다.</li></ul></div></details>
+        <details><summary>설정, 백업과 휴지통</summary><div><ul><li>테마와 앱 언어를 변경할 수 있습니다. 언어를 바꿔도 항목에 이미 저장된 통화는 변경되지 않습니다.</li><li><strong>.ist</strong> 백업은 카테고리만, 데이터 전체 또는 등록일·카테고리 조건에 맞는 아이템으로 내보낼 수 있으며 비밀번호 사용은 선택 사항입니다.</li><li>휴지통, 이미지, 사용자 정의 탭과 사용자 통계의 포함 여부를 선택할 수 있습니다. 백업용 이미지 품질을 바꿔도 앱에 저장된 원본 이미지는 변경되지 않습니다.</li><li>내보내기 전 아이템·카테고리·이미지 수를 확인하고, 불러오기 전에도 백업 정보를 확인합니다.</li><li>불러오기에서 <strong>병합</strong> 또는 <strong>대치</strong>를 선택합니다. 병합은 기존 데이터를 유지하면서 같은 기록을 제외하고, 대치는 불러온 데이터를 앱 데이터로 사용합니다.</li><li>삭제한 아이템은 휴지통으로 이동합니다. 휴지통에서 미리보기, 여러 항목 선택 복구·영구 삭제와 휴지통 비우기를 할 수 있습니다.</li><li>설정의 이미지에서 앱에 저장된 이미지를 모아볼 수 있습니다.</li></ul><p class="note">앱 데이터 삭제 또는 앱 제거 전에 중요한 .ist 파일을 앱 외부에 보관하고 정상적으로 생성되었는지 확인해 주세요. 사용할 수 있는 백업이 없으면 지원 담당자가 로컬 기록을 원격으로 복구할 수 없습니다.</p></div></details>
+      </section>
+      <section><h2>문의 전 확인</h2><ol><li>Item Story와 운영체제를 사용 가능한 최신 버전으로 업데이트합니다.</li><li>앱을 완전히 종료한 뒤 다시 실행합니다.</li><li>사진, 카메라 또는 알림 문제라면 시스템 설정에서 관련 권한을 확인합니다.</li><li>기록이 보이지 않으면 선택한 카테고리, 사용자 정의 탭 조건, 검색 조건, 정렬과 휴지통을 확인합니다.</li><li>데이터 초기화나 앱 재설치 전 .ist 백업을 만들고 정상적으로 생성되었는지 확인합니다.</li></ol></section>
+      <section><h2>문의에 포함할 정보</h2><ul><li>Item Story 버전</li><li>기기 모델과 운영체제 버전</li><li>앱 언어</li><li>문제를 재현하는 순서</li><li>개인정보를 가린 스크린샷 또는 화면 녹화</li><li>아이템, 사진, 알림, 통계, PDF, 백업, 복원 또는 휴지통 중 관련 기능</li></ul><p>지원 담당자가 안전한 진단 샘플을 별도로 요청하지 않는 한 백업 비밀번호, 전체 백업 파일, 영수증 또는 민감한 사진을 보내지 마세요.</p></section>
+      <section><h2>데이터와 복구</h2><p>핵심 데이터는 사용자의 기기에 로컬로 저장됩니다. 사용 가능한 백업 없이 삭제된 데이터는 지원 담당자가 원격으로 복구할 수 없습니다. 설정의 데이터 내보내기에서 .ist 백업을 만들고 중요한 백업은 데이터 삭제 전에 확인해 주세요.</p></section>
+      <section><h2>개인정보</h2><p><a href="../policy/privacy_policy_ko.html">Item Story 개인정보처리방침</a>을 확인해 주세요.</p></section>
+    </main>
+  </body>
+</html>
