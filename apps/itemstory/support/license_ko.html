@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item Story 오픈소스 라이선스</title>
+    <style>
+      :root { color-scheme: light; --bg:#fff8ef; --surface:#ffffff; --text:#24180f; --muted:#6d5b4d; --line:#ead7c4; --brand:#bd5f24; --brand-soft:#fff0df; }
+      * { box-sizing:border-box; }
+      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+      .page { width:min(960px,calc(100% - 32px)); margin:0 auto; padding:32px 0 48px; }
+      .hero,.card { background:var(--surface); border:1px solid var(--line); border-radius:12px; }
+      .hero { padding:24px; margin-bottom:16px; border-top:5px solid var(--brand); }
+      .card { padding:24px; margin-top:16px; }
+      .badge { color:var(--brand); font-size:13px; font-weight:700; margin-bottom:8px; }
+      h1,h2 { margin:0; } h1 { font-size:30px; margin-bottom:10px; } h2 { font-size:21px; margin-bottom:12px; }
+      p { margin:0 0 10px; } ul { margin:0; padding-left:22px; } li+li { margin-top:7px; }
+      table { width:100%; border-collapse:collapse; font-size:14px; } th,td { padding:10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+      th { color:var(--muted); background:var(--brand-soft); } a { color:var(--brand); font-weight:650; overflow-wrap:anywhere; }
+      .muted { color:var(--muted); } .table-wrap { overflow-x:auto; }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="badge">Item Story Open Source Notices</div>
+        <h1>오픈소스 및 제3자 라이선스</h1>
+        <p class="muted">이 페이지는 Item Story에서 사용하는 오픈소스 소프트웨어, 제3자 SDK 및 번들 폰트의 라이선스를 정리합니다.</p>
+      </section>
+      <section class="card">
+        <h2>라이선스 요약</h2>
+        <ul>
+          <li>MIT, BSD 3-Clause, Apache License 2.0 및 SIL Open Font License 구성요소는 각각의 라이선스 조건에 따라 사용됩니다.</li>
+          <li>저작권, 라이선스, 저작자 표시 및 고지 의무는 각 구성요소의 원래 라이선스 조건을 따릅니다.</li>
+          <li>Google Mobile Ads SDK는 광고를 위한 제3자 SDK이며 관련 Google SDK 약관과 포함된 제3자 고지를 따릅니다.</li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>런타임 구성요소</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>구성요소</th><th>용도</th><th>라이선스</th><th>링크</th></tr></thead>
+            <tbody>
+              <tr><td>Flutter SDK / Dart SDK</td><td>앱 프레임워크 및 런타임</td><td>BSD 3-Clause</td><td><a href="https://github.com/flutter/flutter/blob/master/LICENSE">Flutter SDK / Dart SDK</a></td></tr>
+              <tr><td>archive</td><td>압축 및 ZIP 처리</td><td>MIT License</td><td><a href="https://pub.dev/packages/archive">archive</a></td></tr>
+              <tr><td>crypto</td><td>암호화 해시 처리</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/crypto">crypto</a></td></tr>
+              <tr><td>file_picker</td><td>파일 선택</td><td>MIT License</td><td><a href="https://pub.dev/packages/file_picker">file_picker</a></td></tr>
+              <tr><td>image</td><td>이미지 처리</td><td>MIT License</td><td><a href="https://pub.dev/packages/image">image</a></td></tr>
+              <tr><td>image_picker</td><td>카메라 및 사진 보관함 선택</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/image_picker">image_picker</a></td></tr>
+              <tr><td>permission_handler</td><td>권한 요청</td><td>MIT License</td><td><a href="https://pub.dev/packages/permission_handler">permission_handler</a></td></tr>
+              <tr><td>provider</td><td>상태 관리</td><td>MIT License</td><td><a href="https://pub.dev/packages/provider">provider</a></td></tr>
+              <tr><td>hive / hive_flutter</td><td>로컬 데이터 저장</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/hive">hive / hive_flutter</a></td></tr>
+              <tr><td>flutter_slidable</td><td>슬라이드 목록 동작</td><td>MIT License</td><td><a href="https://pub.dev/packages/flutter_slidable">flutter_slidable</a></td></tr>
+              <tr><td>flutter_local_notifications</td><td>로컬 알림</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/flutter_local_notifications">flutter_local_notifications</a></td></tr>
+              <tr><td>flutter_timezone</td><td>기기 시간대 확인</td><td>MIT License</td><td><a href="https://pub.dev/packages/flutter_timezone">flutter_timezone</a></td></tr>
+              <tr><td>timezone</td><td>시간대 데이터 및 계산</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/timezone">timezone</a></td></tr>
+              <tr><td>path_provider</td><td>기기 저장 경로</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/path_provider">path_provider</a></td></tr>
+              <tr><td>url_launcher</td><td>URL 및 시스템 핸들러 실행</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/url_launcher">url_launcher</a></td></tr>
+              <tr><td>share_plus</td><td>시스템 공유</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/share_plus">share_plus</a></td></tr>
+              <tr><td>excel</td><td>Excel 파일 생성</td><td>MIT License</td><td><a href="https://pub.dev/packages/excel">excel</a></td></tr>
+              <tr><td>pdf</td><td>PDF 문서 생성</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/pdf">pdf</a></td></tr>
+              <tr><td>google_mobile_ads</td><td>Google AdMob 연동</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/google_mobile_ads">google_mobile_ads</a></td></tr>
+              <tr><td>Google Mobile Ads SDK</td><td>iOS/Android 광고 SDK</td><td>Google SDK Terms / Open Measurement License</td><td><a href="https://developers.google.com/admob/terms">Google Mobile Ads SDK</a></td></tr>
+              <tr><td>Nanum Gothic</td><td>번들 한글 폰트</td><td>SIL Open Font License 1.1</td><td><a href="https://hangeul.naver.com/font">Nanum Gothic</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card">
+        <h2>라이선스 원문</h2>
+        <ul>
+          <li><a href="https://opensource.org/license/mit/">MIT License</a></li>
+          <li><a href="https://opensource.org/license/bsd-3-clause/">BSD 3-Clause License</a></li>
+          <li><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></li>
+          <li><a href="https://openfontlicense.org/">SIL Open Font License 1.1</a></li>
+          <li><a href="https://developers.google.com/admob/terms">Google Mobile Ads Terms</a></li>
+          <li><a href="https://iabtechlab.com/standards/open-measurement-sdk/">Open Measurement SDK</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
