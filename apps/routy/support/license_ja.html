@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Routy オープンソースライセンス</title>
+    <style>
+      :root { color-scheme: light; --bg:#f4f6fb; --surface:#ffffff; --text:#1f2937; --muted:#6b7280; --line:#d7deea; --brand:#3358c8; --brand-soft:#e8eeff; }
+      * { box-sizing: border-box; }
+      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:linear-gradient(180deg,#eef3ff 0%,var(--bg) 100%); color:var(--text); line-height:1.6; }
+      .page { width:min(960px,calc(100% - 32px)); margin:0 auto; padding:32px 0 48px; }
+      .hero,.card { background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:0 12px 30px rgba(31,41,55,.06); }
+      .hero { padding:28px; margin-bottom:20px; }
+      .card { padding:24px; margin-top:20px; }
+      .badge { display:inline-flex; padding:6px 10px; border-radius:999px; background:var(--brand-soft); color:var(--brand); font-size:13px; font-weight:700; margin-bottom:14px; }
+      h1,h2 { margin:0; }
+      h1 { font-size:30px; line-height:1.2; margin-bottom:10px; }
+      h2 { font-size:22px; line-height:1.25; margin-bottom:14px; }
+      p { margin:0 0 12px; }
+      ul { margin:0; padding-left:20px; }
+      li + li { margin-top:8px; }
+      table { width:100%; border-collapse:collapse; font-size:14px; }
+      th,td { padding:10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+      th { color:var(--muted); background:#f8faff; }
+      a { color:var(--brand); font-weight:700; text-decoration:none; overflow-wrap:anywhere; }
+      .muted { color:var(--muted); }
+      .table-wrap { overflow-x:auto; }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="badge">Routy Open Source Notices</div>
+        <h1>オープンソースおよび第三者ライセンス</h1>
+        <p>最終更新日: 2026-08-17</p>
+        <p class="muted">このページでは、Routyで使用しているオープンソースソフトウェア、第三者SDK、同梱フォントのライセンスをまとめています。</p>
+      </section>
+
+      <section class="card">
+        <h2>ライセンス概要</h2>
+        <ul>
+          <li>MIT、BSD 3-Clause、Apache License 2.0 の構成要素は、それぞれのライセンス条件に従って無料で使用、複製、変更、配布できます。</li>
+          <li>Apache License 2.0 には、著作権表示とライセンス表示の保持、および特許ライセンス条項が含まれます。</li>
+          <li>Google Mobile Ads SDK は広告表示のための第三者SDKであり、Google SDK規約および含まれる Open Measurement License の条件に従います。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>ランタイム構成要素</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>構成要素</th><th>用途</th><th>ライセンス</th><th>リンク</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Flutter SDK / Dart SDK</td><td>アプリフレームワークとランタイム</td><td>BSD 3-Clause</td><td><a href="https://github.com/flutter/flutter/blob/master/LICENSE">Flutter License</a></td></tr>
+              <tr><td>archive</td><td>アーカイブ処理</td><td>MIT License</td><td><a href="https://pub.dev/packages/archive">archive</a></td></tr>
+              <tr><td>device_calendar</td><td>カレンダー取り込み</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/device_calendar">device_calendar</a></td></tr>
+              <tr><td>file_picker</td><td>ファイル選択</td><td>MIT License</td><td><a href="https://pub.dev/packages/file_picker">file_picker</a></td></tr>
+              <tr><td>provider</td><td>状態管理</td><td>MIT License</td><td><a href="https://pub.dev/packages/provider">provider</a></td></tr>
+              <tr><td>hive / hive_flutter</td><td>ローカルデータ保存</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/hive">hive</a></td></tr>
+              <tr><td>flutter_slidable</td><td>スライドアクションUI</td><td>MIT License</td><td><a href="https://pub.dev/packages/flutter_slidable">flutter_slidable</a></td></tr>
+              <tr><td>flutter_local_notifications</td><td>ローカル通知</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/flutter_local_notifications">flutter_local_notifications</a></td></tr>
+              <tr><td>flutter_timezone</td><td>端末タイムゾーン取得</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/flutter_timezone">flutter_timezone</a></td></tr>
+              <tr><td>timezone</td><td>タイムゾーンに基づく予約</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/timezone">timezone</a></td></tr>
+              <tr><td>path_provider</td><td>端末保存先パス</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/path_provider">path_provider</a></td></tr>
+              <tr><td>url_launcher</td><td>外部URLを開く</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/url_launcher">url_launcher</a></td></tr>
+              <tr><td>share_plus</td><td>ファイルとテキスト共有</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/share_plus">share_plus</a></td></tr>
+              <tr><td>excel</td><td>Excel書き出し</td><td>MIT License</td><td><a href="https://pub.dev/packages/excel">excel</a></td></tr>
+              <tr><td>pdf</td><td>PDF書き出し</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/pdf">pdf</a></td></tr>
+              <tr><td>google_mobile_ads</td><td>Google AdMob連携</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/google_mobile_ads">google_mobile_ads</a></td></tr>
+              <tr><td>Google Mobile Ads SDK</td><td>iOS/Android広告SDK</td><td>Google SDK Terms / Open Measurement License</td><td><a href="https://developers.google.com/admob/terms">Google AdMob Terms</a></td></tr>
+              <tr><td>Nanum Gothic</td><td>同梱韓国語フォント</td><td>Apache License 2.0</td><td><a href="https://hangeul.naver.com/font">Naver Nanum Font</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>ライセンス本文</h2>
+        <ul>
+          <li><a href="https://opensource.org/license/mit/">MIT License</a></li>
+          <li><a href="https://opensource.org/license/bsd-3-clause/">BSD 3-Clause License</a></li>
+          <li><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></li>
+          <li><a href="https://iabtechlab.com/standards/open-measurement-sdk/">Open Measurement SDK</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
