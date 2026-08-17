@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album Craft Open Source Licenses</title>
+    <style>
+      :root { color-scheme: light; --bg:#f4f6fb; --surface:#ffffff; --text:#1f2937; --muted:#6b7280; --line:#d7deea; --brand:#3358c8; --brand-soft:#e8eeff; }
+      * { box-sizing: border-box; }
+      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:linear-gradient(180deg,#eef3ff 0%,var(--bg) 100%); color:var(--text); line-height:1.6; }
+      .page { width:min(960px,calc(100% - 32px)); margin:0 auto; padding:32px 0 48px; }
+      .hero,.card { background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:0 12px 30px rgba(31,41,55,.06); }
+      .hero { padding:28px; margin-bottom:20px; }
+      .card { padding:24px; margin-top:20px; }
+      .badge { display:inline-flex; padding:6px 10px; border-radius:999px; background:var(--brand-soft); color:var(--brand); font-size:13px; font-weight:700; margin-bottom:14px; }
+      h1,h2 { margin:0; }
+      h1 { font-size:30px; line-height:1.2; margin-bottom:10px; }
+      h2 { font-size:22px; line-height:1.25; margin-bottom:14px; }
+      p { margin:0 0 12px; }
+      ul { margin:0; padding-left:20px; }
+      li + li { margin-top:8px; }
+      table { width:100%; border-collapse:collapse; font-size:14px; }
+      th,td { padding:10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+      th { color:var(--muted); background:#f8faff; }
+      a { color:var(--brand); font-weight:700; text-decoration:none; overflow-wrap:anywhere; }
+      .muted { color:var(--muted); }
+      .table-wrap { overflow-x:auto; }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="badge">Album Craft Open Source Notices</div>
+        <h1>Open Source and Third-Party Licenses</h1>
+        <p class="muted">This page summarizes open source software, third-party SDKs, and bundled fonts used by Album Craft.</p>
+      </section>
+
+      <section class="card">
+        <h2>License Summary</h2>
+        <ul>
+          <li>MIT, BSD 2-Clause, BSD 3-Clause, and Apache License 2.0 components are generally available for free use, copying, modification, and distribution under their license terms.</li>
+          <li>Apache License 2.0 components require retaining copyright and license notices and include patent license terms.</li>
+          <li>Google Mobile Ads SDK is a third-party advertising SDK and is governed by Google SDK terms and included Open Measurement License terms.</li>
+          <li>Apple Maps and related map features are governed by Apple service terms.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Runtime Components</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Component</th><th>Purpose</th><th>License</th><th>Link</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Flutter SDK / Dart SDK</td><td>App framework and runtime</td><td>BSD 3-Clause</td><td><a href="https://github.com/flutter/flutter/blob/master/LICENSE">Flutter License</a></td></tr>
+              <tr><td>easy_localization</td><td>Localization</td><td>MIT License</td><td><a href="https://pub.dev/packages/easy_localization">easy_localization</a></td></tr>
+              <tr><td>provider</td><td>State management</td><td>MIT License</td><td><a href="https://pub.dev/packages/provider">provider</a></td></tr>
+              <tr><td>dio</td><td>Network requests</td><td>MIT License</td><td><a href="https://pub.dev/packages/dio">dio</a></td></tr>
+              <tr><td>pretty_dio_logger</td><td>Network logging</td><td>MIT License</td><td><a href="https://pub.dev/packages/pretty_dio_logger">pretty_dio_logger</a></td></tr>
+              <tr><td>path_provider</td><td>Device storage paths</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/path_provider">path_provider</a></td></tr>
+              <tr><td>permission_handler</td><td>Permission requests</td><td>MIT License</td><td><a href="https://pub.dev/packages/permission_handler">permission_handler</a></td></tr>
+              <tr><td>file_picker</td><td>Backup file selection</td><td>MIT License</td><td><a href="https://pub.dev/packages/file_picker">file_picker</a></td></tr>
+              <tr><td>photo_manager / photo_manager_image_provider</td><td>Photo library access and image display</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/photo_manager">photo_manager</a></td></tr>
+              <tr><td>exif</td><td>Photo EXIF metadata processing</td><td>MIT License</td><td><a href="https://pub.dev/packages/exif">exif</a></td></tr>
+              <tr><td>photo_view</td><td>Zoomable image viewer</td><td>MIT License</td><td><a href="https://pub.dev/packages/photo_view">photo_view</a></td></tr>
+              <tr><td>pdf</td><td>PDF generation</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/pdf">pdf</a></td></tr>
+              <tr><td>image</td><td>Image processing</td><td>MIT License</td><td><a href="https://pub.dev/packages/image">image</a></td></tr>
+              <tr><td>flutter_easyloading</td><td>Loading indicator</td><td>MIT License</td><td><a href="https://pub.dev/packages/flutter_easyloading">flutter_easyloading</a></td></tr>
+              <tr><td>webview_flutter</td><td>WebView display</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/webview_flutter">webview_flutter</a></td></tr>
+              <tr><td>apple_maps_flutter</td><td>Apple Maps display</td><td>BSD 2-Clause</td><td><a href="https://pub.dev/packages/apple_maps_flutter">apple_maps_flutter</a></td></tr>
+              <tr><td>hive / hive_flutter</td><td>Local data storage</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/hive">hive</a></td></tr>
+              <tr><td>share_plus</td><td>File sharing</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/share_plus">share_plus</a></td></tr>
+              <tr><td>shared_preferences</td><td>App settings storage</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/shared_preferences">shared_preferences</a></td></tr>
+              <tr><td>flutter_slidable</td><td>Slidable list actions</td><td>MIT License</td><td><a href="https://pub.dev/packages/flutter_slidable">flutter_slidable</a></td></tr>
+              <tr><td>video_player</td><td>Video preview</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/video_player">video_player</a></td></tr>
+              <tr><td>flutter_image_compress</td><td>Image compression</td><td>MIT License</td><td><a href="https://pub.dev/packages/flutter_image_compress">flutter_image_compress</a></td></tr>
+              <tr><td>video_thumbnail</td><td>Video thumbnail generation</td><td>MIT License</td><td><a href="https://pub.dev/packages/video_thumbnail">video_thumbnail</a></td></tr>
+              <tr><td>google_mobile_ads</td><td>Google AdMob integration</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/google_mobile_ads">google_mobile_ads</a></td></tr>
+              <tr><td>Google Mobile Ads SDK</td><td>iOS/Android advertising SDK</td><td>Google SDK Terms / Open Measurement License</td><td><a href="https://developers.google.com/admob/terms">Google AdMob Terms</a></td></tr>
+              <tr><td>Nanum Gothic</td><td>Bundled Korean font</td><td>Apache License 2.0</td><td><a href="https://hangeul.naver.com/font">Naver Nanum Font</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>License Texts</h2>
+        <ul>
+          <li><a href="https://opensource.org/license/mit/">MIT License</a></li>
+          <li><a href="https://opensource.org/license/bsd-2-clause/">BSD 2-Clause License</a></li>
+          <li><a href="https://opensource.org/license/bsd-3-clause/">BSD 3-Clause License</a></li>
+          <li><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></li>
+          <li><a href="https://iabtechlab.com/standards/open-measurement-sdk/">Open Measurement SDK</a></li>
+          <li><a href="https://www.apple.com/legal/internet-services/maps/terms-en.html">Apple Maps Terms</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
