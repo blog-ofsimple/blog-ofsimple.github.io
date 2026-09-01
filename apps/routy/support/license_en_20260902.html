@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Routy Open Source Licenses</title>
+    <style>
+      :root { color-scheme: light; --bg:#f4f6fb; --surface:#ffffff; --text:#1f2937; --muted:#6b7280; --line:#d7deea; --brand:#3358c8; --brand-soft:#e8eeff; }
+      * { box-sizing: border-box; }
+      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:linear-gradient(180deg,#eef3ff 0%,var(--bg) 100%); color:var(--text); line-height:1.6; }
+      .page { width:min(960px,calc(100% - 32px)); margin:0 auto; padding:32px 0 48px; }
+      .hero,.card { background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:0 12px 30px rgba(31,41,55,.06); }
+      .hero { padding:28px; margin-bottom:20px; }
+      .card { padding:24px; margin-top:20px; }
+      .badge { display:inline-flex; padding:6px 10px; border-radius:999px; background:var(--brand-soft); color:var(--brand); font-size:13px; font-weight:700; margin-bottom:14px; }
+      h1,h2 { margin:0; }
+      h1 { font-size:30px; line-height:1.2; margin-bottom:10px; }
+      h2 { font-size:22px; line-height:1.25; margin-bottom:14px; }
+      p { margin:0 0 12px; }
+      ul { margin:0; padding-left:20px; }
+      li + li { margin-top:8px; }
+      table { width:100%; border-collapse:collapse; font-size:14px; }
+      th,td { padding:10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+      th { color:var(--muted); background:#f8faff; }
+      a { color:var(--brand); font-weight:700; text-decoration:none; overflow-wrap:anywhere; }
+      .muted { color:var(--muted); }
+      .table-wrap { overflow-x:auto; }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="badge">Routy Open Source Notices</div>
+        <h1>Open Source and Third-Party Licenses</h1>
+        <p class="muted">This page summarizes open source software, third-party SDKs, and bundled fonts used by Routy.</p>
+      </section>
+
+      <section class="card">
+        <h2>License Summary</h2>
+        <ul>
+          <li>MIT, BSD 3-Clause, and Apache License 2.0 components are generally available for free use, copying, modification, and distribution under their license terms.</li>
+          <li>Apache License 2.0 components require retaining copyright and license notices and include patent license terms.</li>
+          <li>Google Mobile Ads SDK is a third-party advertising SDK and is governed by Google SDK terms and included Open Measurement License terms.</li>
+          <li>Nanum Gothic is used under the SIL Open Font License 1.1.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Runtime Components</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Component</th><th>Purpose</th><th>License</th><th>Link</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Flutter SDK / Dart SDK</td><td>App framework and runtime</td><td>BSD 3-Clause</td><td><a href="https://github.com/flutter/flutter/blob/master/LICENSE">Flutter License</a></td></tr>
+              <tr><td>archive</td><td>Archive processing</td><td>MIT License</td><td><a href="https://pub.dev/packages/archive">archive</a></td></tr>
+              <tr><td>device_calendar</td><td>Calendar import</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/device_calendar">device_calendar</a></td></tr>
+              <tr><td>file_picker</td><td>File selection</td><td>MIT License</td><td><a href="https://pub.dev/packages/file_picker">file_picker</a></td></tr>
+              <tr><td>provider</td><td>State management</td><td>MIT License</td><td><a href="https://pub.dev/packages/provider">provider</a></td></tr>
+              <tr><td>hive / hive_flutter</td><td>Local data storage</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/hive">hive</a></td></tr>
+              <tr><td>flutter_slidable</td><td>Slidable list actions</td><td>MIT License</td><td><a href="https://pub.dev/packages/flutter_slidable">flutter_slidable</a></td></tr>
+              <tr><td>flutter_local_notifications</td><td>Local notifications</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/flutter_local_notifications">flutter_local_notifications</a></td></tr>
+              <tr><td>flutter_timezone</td><td>Device timezone lookup</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/flutter_timezone">flutter_timezone</a></td></tr>
+              <tr><td>timezone</td><td>Timezone-based scheduling</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/timezone">timezone</a></td></tr>
+              <tr><td>path_provider</td><td>Device storage paths</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/path_provider">path_provider</a></td></tr>
+              <tr><td>url_launcher</td><td>Open external URLs</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/url_launcher">url_launcher</a></td></tr>
+              <tr><td>share_plus</td><td>Share files and text</td><td>BSD 3-Clause</td><td><a href="https://pub.dev/packages/share_plus">share_plus</a></td></tr>
+              <tr><td>excel</td><td>Excel export</td><td>MIT License</td><td><a href="https://pub.dev/packages/excel">excel</a></td></tr>
+              <tr><td>pdf</td><td>PDF export</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/pdf">pdf</a></td></tr>
+              <tr><td>google_mobile_ads</td><td>Google AdMob integration</td><td>Apache License 2.0</td><td><a href="https://pub.dev/packages/google_mobile_ads">google_mobile_ads</a></td></tr>
+              <tr><td>Google Mobile Ads SDK</td><td>iOS/Android advertising SDK</td><td>Google SDK Terms / Open Measurement License</td><td><a href="https://developers.google.com/admob/terms">Google AdMob Terms</a></td></tr>
+              <tr><td>Nanum Gothic</td><td>Bundled Korean font</td><td>SIL Open Font License 1.1</td><td><a href="https://help.naver.com/service/30016/contents/18088?osType=PC">Naver Nanum Font License</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>License Texts</h2>
+        <ul>
+          <li><a href="https://opensource.org/license/mit/">MIT License</a></li>
+          <li><a href="https://opensource.org/license/bsd-3-clause/">BSD 3-Clause License</a></li>
+          <li><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></li>
+          <li><a href="https://openfontlicense.org/">SIL Open Font License 1.1</a></li>
+          <li><a href="https://iabtechlab.com/standards/open-measurement-sdk/">Open Measurement SDK</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
