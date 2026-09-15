@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#5364cc" />
+    <title>Vocadio サポート</title>
+    <style>
+      :root { color-scheme:light dark; --bg:#f8f8fa; --surface:#fff; --text:#1f1f22; --muted:#68686f; --line:#d9d9de; --brand:#5364cc; --brand-soft:#e3e7ff; --brand-line:#cbd2ff; }
+      * { box-sizing:border-box; }
+      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:linear-gradient(180deg,#eef0ff 0%,var(--bg) 100%); color:var(--text); line-height:1.65; }
+      .page { width:min(960px,calc(100% - 32px)); margin:0 auto; padding:32px 0 48px; }
+      .hero,.card { background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:0 12px 30px rgba(31,31,34,.06); }
+      .hero { padding:28px; margin-bottom:20px; }
+      .card { padding:24px; margin-top:20px; }
+      .badge { display:inline-flex; padding:6px 10px; border-radius:999px; background:var(--brand-soft); color:var(--brand); font-size:13px; font-weight:700; margin-bottom:14px; }
+      h1,h2 { margin:0; }
+      h1 { font-size:30px; line-height:1.2; margin-bottom:10px; }
+      h2 { font-size:22px; line-height:1.25; margin-bottom:14px; }
+      p { margin:0 0 12px; }
+      ul,ol { margin:0; padding-left:20px; }
+      li + li { margin-top:8px; }
+      a { color:var(--brand); font-weight:700; text-decoration:none; overflow-wrap:anywhere; }
+      a:hover { text-decoration:underline; }
+      .muted { color:var(--muted); }
+      .contact-box { margin-top:16px; padding:16px; border-radius:16px; background:var(--brand-soft); border:1px solid var(--brand-line); }
+      @media (prefers-color-scheme:dark) {
+        :root { --bg:#1b1b1d; --surface:#242426; --text:#f5f5f7; --muted:#b8b8bd; --line:#3d3d42; --brand:#9ea9ff; --brand-soft:#30375c; --brand-line:#4a568f; }
+        body { background:linear-gradient(180deg,#20233a 0%,var(--bg) 100%); }
+        .hero,.card { box-shadow:0 12px 30px rgba(0,0,0,.22); }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="badge">Vocadio サポート</div>
+        <h1>Vocadio サポート</h1>
+        <p>暗記帳と問題を作成し、学習・クイズ・メモを管理するVocadioのサポートページです。</p>
+        <div class="contact-box">
+          <p><strong>サポートメール</strong></p>
+          <p><a href="mailto:geryon@ofsimple.com">geryon@ofsimple.com</a></p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>アプリ情報</h2>
+        <ul>
+          <li>アプリ名：<strong>Vocadio</strong></li>
+          <li>バージョン：<strong>1.0.0</strong></li>
+          <li>主な機能：<strong>暗記帳、問題、学習、クイズ、メモ帳、PDF・Excel、データバックアップ</strong></li>
+          <li>対応端末：<strong>iPhoneおよびiPad</strong></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>クイックスタート</h2>
+        <ol>
+          <li><strong>暗記帳</strong>タブで新しい暗記帳を作成します。</li>
+          <li>暗記帳を開き、<strong>問題を追加</strong>を選んで覚えたい内容を登録します。</li>
+          <li><strong>学習</strong>タブで暗記帳と学習範囲を選びます。</li>
+          <li><strong>クイズ</strong>タブで同じ暗記帳の問題を解き、結果と誤答を確認します。</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>暗記帳と問題の使い方</h2>
+        <ul>
+          <li>暗記帳は、一緒に学習する問題をまとめる単位です。暗記帳ごとに名前、説明、カードの色を設定できます。</li>
+          <li>問題形式は、<strong>単語・意味、用語・説明、文章・穴埋め、選択式</strong>に対応しています。</li>
+          <li>検索設定では前方一致または部分一致と検索対象を選べます。形式フィルターと並べ替えも同時に利用できます。</li>
+          <li>問題編集画面では左右に移動し、前後の問題を続けて確認・修正できます。</li>
+          <li><strong>続けて追加</strong>を選ぶと、現在の問題を保存して同じ形式の次の問題をすぐに入力できます。</li>
+          <li>暗記帳や問題は選択して削除できます。個別の問題を左へスワイプして削除することもできます。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>学習の使い方</h2>
+        <ul>
+          <li>暗記帳を選ぶと、問題一覧の検索、問題形式フィルター、並べ替えを利用できます。</li>
+          <li>全問題、フィルター結果、または基準にした問題から範囲を選び、<strong>順番どおり</strong>または<strong>シャッフル</strong>で開始できます。</li>
+          <li>学習中に現在位置を選ぶと、番号、検索一覧、スライダーで多数の問題をすばやく移動できます。</li>
+          <li>中断した学習は続きから再開できます。別の範囲や順序で始める場合は、保存された進行情報を削除して新しく開始できます。</li>
+          <li>問題のメモは学習画面で確認・編集できます。iOSの読み上げと自動送りも設定できます。</li>
+          <li>完了または中断した学習は<strong>学習履歴</strong>で確認し、個別または選択して削除できます。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>クイズの使い方</h2>
+        <ul>
+          <li>暗記帳と全問題または誤答の範囲を選び、出題数または割合を設定します。</li>
+          <li>解答を提出するかクイズを終了すると、正解数、得点、所要時間、誤答を確認できます。</li>
+          <li>進行中のクイズは保存された位置から再開できます。</li>
+          <li><strong>クイズ履歴</strong>では、完了結果の絞り込み・並べ替えや、同じ問題セットへの再挑戦ができます。</li>
+          <li>履歴を左へスワイプするか選択モードを使って、クイズ履歴を削除できます。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>メモ帳の使い方</h2>
+        <ul>
+          <li>メモ帳は暗記帳とは別に、タイトルと書式付き本文を自由に記録する場所です。</li>
+          <li>保存したメモ帳は検索・並べ替えでき、個別または選択して削除できます。</li>
+          <li>メモ帳の本文はPDFに書き出したり、iOSの音声で読み上げたりできます。</li>
+          <li>Excelテンプレートを使って複数のメモ帳を作成し、一括で読み込み・書き出しできます。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>PDFとExcelの使い方</h2>
+        <ul>
+          <li>暗記帳のその他メニューから、全問題または選択した問題を問題用紙・解答用紙PDFとして書き出せます。</li>
+          <li>最初にExcelテンプレートを書き出して形式を確認し、作成した.xlsxファイルを新しい暗記帳または現在の暗記帳へ読み込めます。</li>
+          <li>Excel読み込み時は、既存問題を残す<strong>結合</strong>または現在の問題を入れ替える<strong>置換</strong>を選びます。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>お問い合わせ方法</h2>
+        <ul>
+          <li>上記のサポートメールへお問い合わせください。</li>
+          <li>アプリのバージョン、端末名、iOSまたはiPadOSのバージョン、問題の内容をお知らせください。</li>
+          <li>可能であれば、画面のスクリーンショットと問題が発生するまでの手順も添えてください。</li>
+          <li>暗記帳・問題、学習・クイズ履歴、メモ帳、PDF・Excel、または.vocadioファイルのどれに関する問題かをお知らせください。</li>
+          <li>パスワード、問題の全文、個人的なメモなど、開示したくない情報はお問い合わせ内容から削除してください。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>データとバックアップ</h2>
+        <ul>
+          <li>Vocadioの暗記帳、問題、履歴、メモ帳は、初期設定では端末内に保存されます。</li>
+          <li>アプリを削除する前に、設定のデータ書き出しから必要なデータを.vocadioファイルへバックアップしてください。</li>
+          <li>書き出し時のパスワード保護は任意です。パスワードを忘れた場合、保護されたファイルは復元できません。</li>
+          <li>データを読み込む前に、元のファイルを別途保管することをおすすめします。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>音声読み上げについて</h2>
+        <p>音声読み上げには端末にインストールされた音声と言語設定を使用します。数字、記号、複数の言語が混在する文章は、端末の音声設定によって発音が異なる場合があります。</p>
+      </section>
+
+      <section class="card">
+        <h2>プライバシーとライセンス</h2>
+        <p><a href="../policy/privacy_policy_ja.html">プライバシーポリシーを表示</a></p>
+        <p><a href="license_ja.html">オープンソースライセンスを表示</a></p>
+      </section>
+    </main>
+  </body>
+</html>

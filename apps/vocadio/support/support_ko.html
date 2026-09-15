@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#5364cc" />
+    <title>Vocadio 지원</title>
+    <style>
+      :root { color-scheme:light dark; --bg:#f8f8fa; --surface:#fff; --text:#1f1f22; --muted:#68686f; --line:#d9d9de; --brand:#5364cc; --brand-soft:#e3e7ff; --brand-line:#cbd2ff; }
+      * { box-sizing:border-box; }
+      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:linear-gradient(180deg,#eef0ff 0%,var(--bg) 100%); color:var(--text); line-height:1.65; }
+      .page { width:min(960px,calc(100% - 32px)); margin:0 auto; padding:32px 0 48px; }
+      .hero,.card { background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:0 12px 30px rgba(31,31,34,.06); }
+      .hero { padding:28px; margin-bottom:20px; }
+      .card { padding:24px; margin-top:20px; }
+      .badge { display:inline-flex; padding:6px 10px; border-radius:999px; background:var(--brand-soft); color:var(--brand); font-size:13px; font-weight:700; margin-bottom:14px; }
+      h1,h2 { margin:0; }
+      h1 { font-size:30px; line-height:1.2; margin-bottom:10px; }
+      h2 { font-size:22px; line-height:1.25; margin-bottom:14px; }
+      p { margin:0 0 12px; }
+      ul,ol { margin:0; padding-left:20px; }
+      li + li { margin-top:8px; }
+      a { color:var(--brand); font-weight:700; text-decoration:none; overflow-wrap:anywhere; }
+      a:hover { text-decoration:underline; }
+      .muted { color:var(--muted); }
+      .contact-box { margin-top:16px; padding:16px; border-radius:16px; background:var(--brand-soft); border:1px solid var(--brand-line); }
+      @media (prefers-color-scheme:dark) {
+        :root { --bg:#1b1b1d; --surface:#242426; --text:#f5f5f7; --muted:#b8b8bd; --line:#3d3d42; --brand:#9ea9ff; --brand-soft:#30375c; --brand-line:#4a568f; }
+        body { background:linear-gradient(180deg,#20233a 0%,var(--bg) 100%); }
+        .hero,.card { box-shadow:0 12px 30px rgba(0,0,0,.22); }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="badge">Vocadio 지원</div>
+        <h1>Vocadio 지원</h1>
+        <p>암기장과 문항을 만들고 학습·퀴즈·메모를 관리하는 Vocadio 앱 지원 페이지입니다.</p>
+        <div class="contact-box">
+          <p><strong>지원 이메일</strong></p>
+          <p><a href="mailto:geryon@ofsimple.com">geryon@ofsimple.com</a></p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>앱 정보</h2>
+        <ul>
+          <li>앱 이름: <strong>Vocadio</strong></li>
+          <li>버전: <strong>1.0.0</strong></li>
+          <li>주요 기능: <strong>암기장, 문항, 학습, 퀴즈, 메모장, PDF·Excel, 데이터 백업</strong></li>
+          <li>플랫폼: <strong>iPhone 및 iPad</strong></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>빠른 시작</h2>
+        <ol>
+          <li><strong>암기장</strong> 탭에서 새 암기장을 만듭니다.</li>
+          <li>암기장 안에서 <strong>문항 추가</strong>를 눌러 학습할 내용을 등록합니다.</li>
+          <li><strong>학습</strong> 탭에서 암기장과 학습 범위를 선택해 내용을 익힙니다.</li>
+          <li><strong>퀴즈</strong> 탭에서 같은 암기장의 문항을 풀고 결과와 오답을 확인합니다.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>암기장과 문항 사용법</h2>
+        <ul>
+          <li>암기장은 함께 학습할 문항을 묶는 단위입니다. 암기장마다 이름, 설명과 카드 색상을 설정할 수 있습니다.</li>
+          <li>문항 유형은 <strong>단어·뜻, 용어·설명, 문장·빈칸, 객관식</strong>을 지원합니다.</li>
+          <li>검색 설정에서 앞부분 일치 또는 포함 검색과 검색 대상을 선택할 수 있고, 유형 필터와 정렬도 함께 사용할 수 있습니다.</li>
+          <li>문항 편집 화면에서는 좌우로 이동하며 앞뒤 문항을 이어서 확인하고 수정할 수 있습니다.</li>
+          <li><strong>계속 추가</strong>를 누르면 현재 문항을 저장한 뒤 같은 유형의 다음 문항을 바로 입력할 수 있습니다.</li>
+          <li>암기장과 문항은 선택 삭제할 수 있으며, 문항을 왼쪽으로 밀어서 개별 삭제할 수도 있습니다.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>학습 사용법</h2>
+        <ul>
+          <li>학습할 암기장을 선택하면 문항 목록에서 검색, 문항 유형 필터와 정렬을 적용할 수 있습니다.</li>
+          <li>전체 문항, 필터 결과 또는 기준 문항을 중심으로 학습 범위를 정하고 <strong>순서대로</strong> 또는 <strong>셔플</strong>로 시작할 수 있습니다.</li>
+          <li>학습 중 현재 위치를 누르면 번호, 검색 목록과 슬라이더로 많은 문항 사이를 빠르게 이동할 수 있습니다.</li>
+          <li>중단한 학습은 이어서 할 수 있습니다. 다른 범위나 순서로 시작하려면 기존 진행 정보를 지우고 새로 시작할 수 있습니다.</li>
+          <li>문항의 메모는 학습 화면에서 확인하고 편집할 수 있으며, iOS 음성 읽기와 자동 넘김도 설정할 수 있습니다.</li>
+          <li>완료하거나 중단한 학습은 <strong>학습 기록</strong>에서 확인하고 개별 또는 선택 삭제할 수 있습니다.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>퀴즈 사용법</h2>
+        <ul>
+          <li>퀴즈를 풀 암기장과 전체 또는 오답 범위를 선택한 뒤 출제 문항 수나 비율을 설정합니다.</li>
+          <li>답안을 제출하거나 퀴즈를 종료하면 정답 수, 점수, 소요 시간과 오답을 확인할 수 있습니다.</li>
+          <li>진행 중인 퀴즈는 저장된 위치에서 이어서 풀 수 있습니다.</li>
+          <li><strong>퀴즈 기록</strong>에서 완료 결과를 필터·정렬하거나 같은 문항 묶음으로 다시 풀 수 있습니다.</li>
+          <li>퀴즈 기록은 항목을 왼쪽으로 밀거나 선택 모드를 사용해 삭제할 수 있습니다.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>메모장 사용법</h2>
+        <ul>
+          <li>메모장은 암기장과 별도로 자유롭게 제목과 서식 있는 본문을 작성하는 공간입니다.</li>
+          <li>저장한 메모장은 검색·정렬하고 개별 또는 선택 삭제할 수 있습니다.</li>
+          <li>메모장 본문은 PDF로 내보내거나 iOS 음성으로 읽을 수 있습니다.</li>
+          <li>Excel 템플릿을 이용해 여러 메모장을 작성하고 한 번에 불러오거나 내보낼 수 있습니다.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>PDF와 Excel 사용법</h2>
+        <ul>
+          <li>암기장 더보기 메뉴에서 전체 또는 선택한 문항을 시험지·정답지 PDF로 내보낼 수 있습니다.</li>
+          <li>Excel 템플릿을 먼저 내보내 형식을 확인한 뒤, 작성한 .xlsx 파일을 새 암기장이나 현재 암기장으로 불러올 수 있습니다.</li>
+          <li>Excel 불러오기에서는 기존 문항을 유지하는 <strong>병합</strong>과 현재 암기장 문항을 바꾸는 <strong>대치</strong> 중 하나를 선택합니다.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>문의 방법</h2>
+        <ul>
+          <li>위 지원 이메일로 문의해 주세요.</li>
+          <li>앱 버전, 기기명, iOS 또는 iPadOS 버전과 문제 내용을 함께 적어 주세요.</li>
+          <li>가능하면 화면 캡처와 문제가 발생하기까지의 순서를 함께 보내 주세요.</li>
+          <li>암기장·문항, 학습·퀴즈 기록, 메모장, PDF·Excel 또는 .vocadio 파일 문제인지 알려주시면 확인에 도움이 됩니다.</li>
+          <li>비밀번호, 문항 전체 내용이나 개인적인 메모처럼 공개하고 싶지 않은 정보는 문의 내용에서 가려 주세요.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>데이터와 백업</h2>
+        <ul>
+          <li>Vocadio의 암기장, 문항, 기록과 메모는 기본적으로 사용자의 기기 내부에 저장됩니다.</li>
+          <li>앱 삭제 전에 필요한 데이터는 설정의 데이터 내보내기로 .vocadio 파일에 백업해 주세요.</li>
+          <li>내보낼 때 비밀번호 사용 여부를 선택할 수 있습니다. 비밀번호를 잊으면 보호된 파일을 복구할 수 없습니다.</li>
+          <li>불러오기 전에 원본 파일의 별도 사본을 보관하는 것을 권장합니다.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>음성 읽기 안내</h2>
+        <p>음성 읽기는 기기에 설치된 음성과 언어 설정을 사용합니다. 숫자, 기호 또는 여러 언어가 섞인 문장은 기기의 음성 설정에 따라 발음이 다를 수 있습니다.</p>
+      </section>
+
+      <section class="card">
+        <h2>개인정보 및 라이선스</h2>
+        <p><a href="../policy/privacy_policy_ko.html">개인정보 처리방침 보기</a></p>
+        <p><a href="license_ko.html">오픈소스 라이선스 보기</a></p>
+      </section>
+    </main>
+  </body>
+</html>

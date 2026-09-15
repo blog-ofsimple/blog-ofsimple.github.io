@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#5364cc" />
+    <title>Vocadio Support</title>
+    <style>
+      :root { color-scheme:light dark; --bg:#f8f8fa; --surface:#fff; --text:#1f1f22; --muted:#68686f; --line:#d9d9de; --brand:#5364cc; --brand-soft:#e3e7ff; --brand-line:#cbd2ff; }
+      * { box-sizing:border-box; }
+      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:linear-gradient(180deg,#eef0ff 0%,var(--bg) 100%); color:var(--text); line-height:1.65; }
+      .page { width:min(960px,calc(100% - 32px)); margin:0 auto; padding:32px 0 48px; }
+      .hero,.card { background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:0 12px 30px rgba(31,31,34,.06); }
+      .hero { padding:28px; margin-bottom:20px; }
+      .card { padding:24px; margin-top:20px; }
+      .badge { display:inline-flex; padding:6px 10px; border-radius:999px; background:var(--brand-soft); color:var(--brand); font-size:13px; font-weight:700; margin-bottom:14px; }
+      h1,h2 { margin:0; }
+      h1 { font-size:30px; line-height:1.2; margin-bottom:10px; }
+      h2 { font-size:22px; line-height:1.25; margin-bottom:14px; }
+      p { margin:0 0 12px; }
+      ul,ol { margin:0; padding-left:20px; }
+      li + li { margin-top:8px; }
+      a { color:var(--brand); font-weight:700; text-decoration:none; overflow-wrap:anywhere; }
+      a:hover { text-decoration:underline; }
+      .muted { color:var(--muted); }
+      .contact-box { margin-top:16px; padding:16px; border-radius:16px; background:var(--brand-soft); border:1px solid var(--brand-line); }
+      @media (prefers-color-scheme:dark) {
+        :root { --bg:#1b1b1d; --surface:#242426; --text:#f5f5f7; --muted:#b8b8bd; --line:#3d3d42; --brand:#9ea9ff; --brand-soft:#30375c; --brand-line:#4a568f; }
+        body { background:linear-gradient(180deg,#20233a 0%,var(--bg) 100%); }
+        .hero,.card { box-shadow:0 12px 30px rgba(0,0,0,.22); }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="badge">Vocadio Support</div>
+        <h1>Vocadio Support</h1>
+        <p>Support for Vocadio, an app for creating decks and items and managing study sessions, quizzes, and notes.</p>
+        <div class="contact-box">
+          <p><strong>Support email</strong></p>
+          <p><a href="mailto:geryon@ofsimple.com">geryon@ofsimple.com</a></p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>App information</h2>
+        <ul>
+          <li>App name: <strong>Vocadio</strong></li>
+          <li>Version: <strong>1.0.0</strong></li>
+          <li>Main features: <strong>decks, items, study, quizzes, notepads, PDF and Excel, and data backup</strong></li>
+          <li>Platforms: <strong>iPhone and iPad</strong></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Quick start</h2>
+        <ol>
+          <li>Create a deck from the <strong>Decks</strong> tab.</li>
+          <li>Open the deck and select <strong>Add item</strong> to enter the material you want to learn.</li>
+          <li>Open the <strong>Study</strong> tab and choose a deck and study range.</li>
+          <li>Use the <strong>Quiz</strong> tab to answer items from the same deck and review results and incorrect answers.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>Using decks and items</h2>
+        <ul>
+          <li>A deck groups items that you want to study together. Each deck can have its own name, description, and card color.</li>
+          <li>Supported item types are <strong>word and meaning, term and description, sentence blanks, and multiple choice</strong>.</li>
+          <li>Search options let you choose prefix or contains matching and the fields to search. Type filters and sorting can be applied at the same time.</li>
+          <li>In the item editor, swipe left or right to review and edit adjacent items.</li>
+          <li>Select <strong>Add another</strong> to save the current item and immediately enter another item of the same type.</li>
+          <li>You can select and delete decks or items, or swipe an individual item to the left to delete it.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Studying</h2>
+        <ul>
+          <li>After choosing a deck, you can search its item list and apply an item-type filter and sorting.</li>
+          <li>Choose all items, the filtered results, or a range based on an anchor item, then start in <strong>sequential</strong> or <strong>shuffle</strong> order.</li>
+          <li>During study, select the current position to move quickly through a large set using a number, search list, or slider.</li>
+          <li>An interrupted session can be resumed. To use a different range or order, remove the saved progress and start a new session.</li>
+          <li>Item notes can be viewed and edited while studying. iOS speech and automatic advance are also available.</li>
+          <li>Completed and interrupted sessions appear in <strong>Study history</strong>, where they can be deleted individually or in a selection.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Using quizzes</h2>
+        <ul>
+          <li>Choose a deck and either all items or incorrect items, then set the number or percentage of items to include.</li>
+          <li>After submitting or ending a quiz, you can review the number correct, score, elapsed time, and incorrect answers.</li>
+          <li>An in-progress quiz can be resumed from its saved position.</li>
+          <li>In <strong>Quiz history</strong>, filter and sort completed results or retake the same item set.</li>
+          <li>Delete quiz records by swiping an entry to the left or by using selection mode.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Using notepads</h2>
+        <ul>
+          <li>Notepads are separate from decks and let you write a title and formatted body text freely.</li>
+          <li>Saved notepads can be searched, sorted, and deleted individually or in a selection.</li>
+          <li>A notepad can be exported as a PDF or read aloud using iOS speech.</li>
+          <li>Use the Excel template to prepare multiple notepads and import or export them together.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Using PDF and Excel</h2>
+        <ul>
+          <li>From a deck's More menu, export all or selected items as a worksheet and answer-key PDF.</li>
+          <li>Export the Excel template first, keep its structure, and then import the completed .xlsx file into a new or existing deck.</li>
+          <li>When importing Excel data, choose <strong>Merge</strong> to keep existing items or <strong>Replace</strong> to replace the current deck's items.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>How to contact support</h2>
+        <ul>
+          <li>Contact us at the support email above.</li>
+          <li>Include the app version, device model, iOS or iPadOS version, and a description of the issue.</li>
+          <li>If possible, include screenshots and the steps that led to the issue.</li>
+          <li>Tell us whether the issue concerns decks and items, study or quiz history, notepads, PDF or Excel, or a .vocadio file.</li>
+          <li>Remove passwords, full item contents, personal notes, and any other information you do not want to disclose.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Data and backups</h2>
+        <ul>
+          <li>Vocadio stores decks, items, activity history, and notepads on your device by default.</li>
+          <li>Before deleting the app, back up any data you need to a .vocadio file using Data Export in Settings.</li>
+          <li>Password protection is optional during export. A password-protected file cannot be recovered if you forget its password.</li>
+          <li>We recommend keeping a separate copy of the original file before importing data.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Speech notice</h2>
+        <p>Speech uses voices installed on your device and its language settings. Pronunciation of numbers, symbols, or sentences containing multiple languages may vary depending on the device's speech settings.</p>
+      </section>
+
+      <section class="card">
+        <h2>Privacy and licenses</h2>
+        <p><a href="../policy/privacy_policy_en.html">View the Privacy Policy</a></p>
+        <p><a href="license_en.html">View Open Source Licenses</a></p>
+      </section>
+    </main>
+  </body>
+</html>
